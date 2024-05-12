@@ -287,6 +287,6 @@ CAN-SecureBERT는 사이버 보안(cybersecurity)에 초점을 맞춘 데이터�
 VIII. CONCLUSION <br>
 이 연구에서는 사전 훈련된 트랜스포머(transformer) 기반 모델을 미세 조정하여 CAN 침입 탐지 및 공격 분류를 위한 새로운 접근 방식을 제안합니다. 구체적으로, CAN-C-BERT, CAN-SecureBERT, CAN-LLAMA2와 같은 세 가지 독특한 모델이 개발되었습니다. 이 모델들은 CAN 메시지 로그를 직접 사용하며, 데이터 전처리가 필요 없습니다. 사전에 균형 잡힌 CAN 데이터셋으로 훈련된 후, 이들 모델의 성능은 최신 모델들과 비교되었습니다. CAN-LLAMA2는 모든 실증적인 최신 IDS(Intrusion Detection System) 시스템보다 더 높은 성능을 보여주며, CAN-SecureBERT는 두 번째로 좋은 모델로 평가되었습니다. 특히, CAN-LLAMA2는 BA, PREC, DR, F1 점수에서 0.999993에 이르고, 3.1e-6의 인상적으로 낮은 FAR(False Alarm Rate)을 달성하여, MTH-IDS의 FAR보다 약 52배 더 우수한 결과를 보였습니다. 전반적으로, 이 연구는 CAN IDS 분야의 발전을 도모하며, 모델 디자인, 성능 및 사이버 보안 응용에 대한 중요한 통찰력을 제공합니다.
 
-IX. FUTURE WORKS
+IX. FUTURE WORKS <br>
 우리 연구의 주요 한계 중 하나는 컴퓨터 자원의 제약(constraint)입니다. 앞으로의 연구에서 우리는 제안된 CAN-LLAMA2 모델의 크기를 더욱 줄이고 추론(inference) 속도를 향상시키는 방법을 탐구할 것입니다.
 
