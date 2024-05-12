@@ -205,4 +205,4 @@ $$
 
 "[ANOMALY TRANSFORMER: TIME SERIES ANOMALY DETECTION WITH ASSOCIATION DISCREPANCY](https://hanjunseojbnu.tistory.com/10 "ANOMALY TRANSFORMER: TIME SERIES ANOMALY DETECTION WITH ASSOCIATION DISCREPANCY")" 논문에 기재된 데이터셋과 동일한 데이터셋을 사용하였다.
 
-![](https://blog.kakaocdn.net/dn/79Yes/btsHnhMFyh6/Rrpw2DuU2GwUFFb9rJBcP0/img.png)
+![](https://blog.kakaocdn.net/dn/79Yes/btsHnhMFyh6/Rrpw2DuU2GwUFFb9rJBcP0/img.png)git 
