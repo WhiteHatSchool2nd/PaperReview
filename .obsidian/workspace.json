@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "ANOMALY-TRANSFORMER-TIME-SERIES-ANOMALY-DETECTION-WITH-ASSOCIATION-DISCREPANCY/ANOMALY-TRANSFORMER-TIME-SERIES-ANOMALY-DETECTION-WITH-ASSOCIATION-DISCREPANCY.md",
+                "file": "MEMTO-Memory-guided Transformer for Multivariate Time Series Anomaly Detection/MEMTO-Memory-guided Transformer for Multivariate Time Series Anomaly Detection.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,14 +85,14 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "ANOMALY-TRANSFORMER-TIME-SERIES-ANOMALY-DETECTION-WITH-ASSOCIATION-DISCREPANCY/ANOMALY-TRANSFORMER-TIME-SERIES-ANOMALY-DETECTION-WITH-ASSOCIATION-DISCREPANCY.md",
+                "file": "MEMTO-Memory-guided Transformer for Multivariate Time Series Anomaly Detection/MEMTO-Memory-guided Transformer for Multivariate Time Series Anomaly Detection.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
                 "showSearch": false,
                 "searchQuery": "",
                 "backlinkCollapsed": false,
-                "unlinkedCollapsed": true
+                "unlinkedCollapsed": false
               }
             }
           },
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "ANOMALY-TRANSFORMER-TIME-SERIES-ANOMALY-DETECTION-WITH-ASSOCIATION-DISCREPANCY/ANOMALY-TRANSFORMER-TIME-SERIES-ANOMALY-DETECTION-WITH-ASSOCIATION-DISCREPANCY.md",
+                "file": "MEMTO-Memory-guided Transformer for Multivariate Time Series Anomaly Detection/MEMTO-Memory-guided Transformer for Multivariate Time Series Anomaly Detection.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "ANOMALY-TRANSFORMER-TIME-SERIES-ANOMALY-DETECTION-WITH-ASSOCIATION-DISCREPANCY/ANOMALY-TRANSFORMER-TIME-SERIES-ANOMALY-DETECTION-WITH-ASSOCIATION-DISCREPANCY.md"
+                "file": "MEMTO-Memory-guided Transformer for Multivariate Time Series Anomaly Detection/MEMTO-Memory-guided Transformer for Multivariate Time Series Anomaly Detection.md"
               }
             }
           }
@@ -133,8 +133,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -146,13 +145,21 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "7e72c57fe4068b12",
+  "active": "3d25703e201a8eb7",
   "lastOpenFiles": [
+    "MEMTO-Memory-guided Transformer for Multivariate Time Series Anomaly Detection/picture/2.png",
+    "picture/Pasted.md",
+    "picture",
+    "ANOMALY-TRANSFORMER-TIME-SERIES-ANOMALY-DETECTION-WITH-ASSOCIATION-DISCREPANCY/ANOMALY-TRANSFORMER-TIME-SERIES-ANOMALY-DETECTION-WITH-ASSOCIATION-DISCREPANCY.md",
+    "MEMTO-Memory-guided Transformer for Multivariate Time Series Anomaly Detection/MEMTO-Memory-guided Transformer for Multivariate Time Series Anomaly Detection.md",
+    "MEMTO-Memory-guided Transformer for Multivariate Time Series Anomaly Detection/picture",
+    "MEMTO-Memory-guided Transformer for Multivariate Time Series Anomaly Detection/picture/1.png",
+    "Pasted.md",
+    "MEMTO-Memory-guided Transformer for Multivariate Time Series Anomaly Detection",
     "ANOMALY-TRANSFORMER-TIME-SERIES-ANOMALY-DETECTION-WITH-ASSOCIATION-DISCREPANCY/capture/15.png",
     "ANOMALY-TRANSFORMER-TIME-SERIES-ANOMALY-DETECTION-WITH-ASSOCIATION-DISCREPANCY/capture/14.png",
     "ANOMALY-TRANSFORMER-TIME-SERIES-ANOMALY-DETECTION-WITH-ASSOCIATION-DISCREPANCY/capture/13.png",
     "ANOMALY-TRANSFORMER-TIME-SERIES-ANOMALY-DETECTION-WITH-ASSOCIATION-DISCREPANCY/capture/12.png",
-    "ANOMALY-TRANSFORMER-TIME-SERIES-ANOMALY-DETECTION-WITH-ASSOCIATION-DISCREPANCY/ANOMALY-TRANSFORMER-TIME-SERIES-ANOMALY-DETECTION-WITH-ASSOCIATION-DISCREPANCY.md",
     "ANOMALY-TRANSFORMER-TIME-SERIES-ANOMALY-DETECTION-WITH-ASSOCIATION-DISCREPANCY/803_anomaly_transformer_time_serie.pdf",
     "README.md",
     "803_anomaly_transformer_time_serie.pdf"
