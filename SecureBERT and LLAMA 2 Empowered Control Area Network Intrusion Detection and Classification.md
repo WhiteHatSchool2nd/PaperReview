@@ -3,7 +3,7 @@
 **저자:** Xuemei Li, Student Member, IEEE, Huirong Fu, Member, IEEE  
 **논문 링크:** [arXiv:2311.12074](https://arxiv.org/pdf/2311.12074)
 
----
+--- 
 
 이 연구는 Controller Area Network (CAN) 공격 탐지를 위해 사전 훈련된 Transformer 모델의 활용성을 탐구합니다. 연구팀은 **CAN-SecureBERT**와 **CAN-LLAMA2** 두 가지 모델을 개발했습니다. 특히, **CAN-LLAMA2** 모델은 균형 잡힌 정확도, 정밀 탐지율, F1 점수에서 0.999993이라는 뛰어난 성능을 달성했으며, 오경보율은 기존 최고 모델보다 52배 낮은 3.10e-6을 기록하였습니다.
 
@@ -31,7 +31,7 @@ CAN-LLAMA2 모델이 가장 높은 성능을 보이고, CAN-SecureBERT가 그 �
 Masked adaptation이 시퀀스 내에서 subsequent predictions에 대한 주의를 방지하기 위해 사용됩니다. 이는 autoregressive tasks (한 번에 하나의 token을 예측)에서 필수적이며, 그렇지 않으면 미래 positions의 정보가 current prediction에 영향을 미치지 않도록 합니다, 이는 data leakage로 이어질 수 있습니다. Encoder 상태의 Ks와 Vs의 곱셈과 decoder 상태의 Qs를 이용한 self-attention mechanism은 softmax 함수를 통한 normalization 단계를 따릅니다. Softmax layer는 최종 출력으로 가장 높은 확률을 가진 단어를 식별합니다.
 Transformer network의 훈련 방법론은 gradient descent algorithm을 따르며, backpropagation을 활용하여 모델 매개변수의 weights를 조정하고 predictions과 actual values 사이의 오차를 최소화함으로써 최적의 학습 결과를 달성합니다.
 
-B. CAN-C-BERT
+B. CAN-C-BERT <br>
 BERT(Bidirectional Encoder Representations from Transformers)는 2018년 Google에 의해 소개된 "Encoder-only" Transformer로, 대규모 데이터셋에서의 강력한 사전 훈련(pre-training)을 통해 다양한 downstream tasks에 fine-tuning할 수 있으며, natural language understanding에서의 다양성과 효과성을 강조합니다. BERT 모델은 라벨이 없는 텍스트로부터 양방향의 심층적인 표현을 생성하며, 사전 훈련 후에는 sequence classification과 같은 다양한 downstream tasks에 fine-tuning될 수 있습니다. 이 연구에서는 BookCorpus 데이터셋과 English Wikipedia에 사전 훈련된 BERT base version 모델을 사용했습니다.
 
 CAN-C-BERT 모델은 침입 분류(intrusion classification) 모델로, "C"는 "Classification"를 의미합니다. CAN-C-BERT 모델 구조는 사전 훈련된 BERT base version 모델과 classification head를 포함합니다. 사전 훈련 과정은 문법과 문맥에 대한 기초적인 이해를 확립하고, MLM(Masked Language Model) 및 NSP(Next Sentence Prediction)의 두 가지 주요 훈련 전략을 사용합니다. MLM에서는 문장의 일부 단어를 가리고, 양방향 맥락을 기반으로 가려진 단어를 예측합니다. NSP에서는 [CLS] 특수 토큰과 문장 분리를 나타내는 [SEP] 토큰을 포함합니다.
@@ -58,12 +58,12 @@ CAN 공격 detection 및 classification 과정은 CAN 메시지의 tokenization�
  
 <p align="center">Fig. 6. CAN-SecureBERT Fine-tuning Model</p>
 
-C. CAN-SecureBERT
+C. CAN-SecureBERT <br>
 CAN-SecureBERT를 사용하여 CAN 메시지를 분류하는 과정은 CAN-C-BERT에 의해 사용된 접근 방식을 반영합니다. 이는 사전 훈련된 SecureBERT 모델과 fully connected neural network로 구성된 classification head를 포함합니다. SecureBERT는 사전 훈련된 RoBERTa-base 모델의 아키텍처를 활용하며, 12개의 hidden transformer 및 attention layers와 하나의 input layer를 특징으로 합니다. 이러한 적용은 98,411개의 사이버보안 관련 textual elements(10억 tokens에 해당)의 대규모 데이터셋을 활용하여 RoBERTa-base 모델을 fine-tuning하는 것을 포함합니다. 모델은 원래 RoBERTa tokenizer를 기반으로 한 맞춤형 tokenizer를 통합하여 전체 vocabulary를 50,265로 확장합니다. 이 맞춤형 tokenizer는 모델이 textual corpora에서 사이버보안 관련 tokens를 추출하는 능력을 향상시킵니다. 이름에서 알 수 있듯이, SecureBERT는 Security와 BERT를 결합합니다. 모델의 효과는 훈련 단계에서 vocabulary의 token weights에 noise를 도입함으로써 더욱 증가됩니다.
 
 CAN-SecureBERT의 모델 아키텍처는 Figure 6에서 CAN-C-BERT와 유사하게 표현됩니다. 이는 사전 훈련된 SecureBERT 모델과 classification head를 포함합니다. 사전 훈련된 SecureBERT 모델은 총 123 million model parameters를 가진 12개의 transformer blocks를 가집니다. Classification head는 fully connected neural network로 구현됩니다. 이는 SecureBERT 모델에서 분류 토큰 [CLS]의 embedding vector가 도출된 후에 통합됩니다. 이는 hidden layer, output layer, 그리고 softmax activation layer를 포함하는 fully connected neural networks로 구성됩니다. [CLS] embedding vector는 hidden layer를 통과한 후 output layer에 연결됩니다. Output layer에서 나온 출력은 softmax activation layer로 전달되어 확률 벡터를 얻습니다. 가장 높은 확률을 가진 클래스가 최종 예측 출력입니다. 
 
-D. CAN-LLAMA2
+D. CAN-LLAMA2 <br>
 LLAMA 2는 generative text 모델의 두 번째 버전으로, 사전 훈련 및 미세 조정(fine-tuned)이 완료된 모델 모음입니다. 2023년 7월 18일, Meta와 Microsoft 간의 협력 프로젝트로 공식적으로 소개되었습니다. Meta에 의해 개발되고 출시된 LLAMA 2 모델은 7 billion, 13 billion, 70 billion 파라미터를 가진 세 가지 다른 크기로 제공됩니다. 이 모델들은 CommonCrawl의 웹 페이지, GitHub의 오픈 소스 저장소 코드, 20개 언어로 된 Wikipedia 내용, 공공 도메인 책, ArXiv의 과학 논문에서 가져온 Latex 소스 코드, Stack Exchange의 질문과 답변 등 다양한 출처에서 2 trillion tokens으로 구성된 방대한 데이터셋에서 훈련되었습니다. 데이터셋 큐레이션 과정에서 개인 데이터를 포함한 웹사이트는 신중하게 제거되었으며, 신뢰할 수 있는 출처에서의 샘플은 업샘플링되었습니다.
 
 CAN-LLAMA2 모델의 아키텍처는 '그림 7'에 나타나 있습니다. CAN-LLAMA2 모델은 사전 훈련된 LLAMA 2 모델과 classification head로 구성됩니다. 이 연구에서 사용된 사전 훈련된 LLAMA 2 모델은 half-precision 모델이며, 32개의 transformer decoder 블록을 포함해 총 7 billion 모델 파라미터를 가지고 있습니다. Classification head는 완전 연결 신경망(fully connected neural network)으로 구현됩니다.
@@ -79,7 +79,7 @@ CAN 공격 탐지 및 분류를 위한 첫 단계는 LLAMA 2 tokenizer를 사용
 ## IV. FINE-TUNING PROCESS
 이 Section에서는 수학적 표현을 사용하여 FINE-TUNING 과정을 설명합니다. 주요 단계는 사전 훈련된 모델에서 클래스 토큰을 획득하는 것, classification head를 적용하여 클래스 확률 벡터를 획득하는 것, loss function을 계산하는 것, 그리고 AdamW 알고리즘을 이용한 weight 최적화 절차를 포함합니다. 또한, LLAMA2 모델의 FINE-TUNING 용이하게 하는 parameter 기반 FINE-TUNING의 효율성을 향상시키는 방법론을 소개합니다.
 
-A. CAN-C-BERT와 CAN-SecureBERT FINE-TUNING
+A. CAN-C-BERT와 CAN-SecureBERT FINE-TUNING <br>
 처음에 개별 원시 CAN 메시지는 토큰화됩니다. 이 과정은 입력 시퀀스를 transformer 모델과 연관된 tokenizer를 사용하여 subword 토큰으로 나누는 것을 포함합니다. X를 토큰화된 입력 시퀀스로 상징하겠습니다. 또한, 모델을 transformer 모델로 표시하며, 여기서 θ는 모델의 parameters에 해당합니다. 출력은 Z로 표현되며, 다음과 같이 방정식 (1)로 나타낼 수 있습니다.
 
 <p align="center">Z = model(X, θ)</p>
@@ -122,7 +122,7 @@ $$
 모델을 업데이트하는 전 과정에서, 매개변수 (\theta_U)와 (\theta_V)는 AdamW 최적화 알고리즘을 사용하여 조정됩니다. 이 업데이트는 미세 조정(fine-tuning) 손실 (L_{fine-tune})을 최소화하기 위해 수행됩니다.
 
 
-V. PERFORMANCE METRICS
+V. PERFORMANCE METRICS <br>
 이 section에서는 성능 벤치마크를 위해 선택된 지표(metrics)들을 소개합니다. 우리는 불균형 데이터셋을 다룰 수 있고, 최종 사용자에게 직접적인 영향을 줄 수 있는 지표들을 선택했습니다.
 
 제안된 CAN-C-BERT, CAN-SecureBERT, 및 CAN-LLAMA2 모델의 성능 평가는 BA(Balanced Accuracy, 균형 정확도), PREC(Precision, 정밀도), DR(Detection Rate, 탐지율) 또는 Recall(재현율), FAR(False Alarm Rate, 오경보율), F1 점수, 그리고 모델 파라미터 크기와 같은 핵심 지표들에 의존합니다. 이 지표들의 수학적 표현은 [28]에서 유도될 수 있으며, 여기서 TP는 True Positive(진짜 양성), TN은 True Negative(진짜 음성), FP는 False Positive(가짜 양성), FN은 False Negative(가짜 음성)을 의미합니다.
@@ -152,7 +152,7 @@ $$
 F1 = \frac{2 \cdot PREC \cdot DR}{PREC + DR}
 $$
 
-VI. DATASETS
+VI. DATASETS <br>
 이 연구에서는 현대의 YF 쏘나타에서 수집된 차량 해킹 데이터셋을 사용했습니다. 이 데이터셋은 DoS(DoS) 공격, 퍼지(Fuzzy) 공격, 그리고 스푸핑(Spoofing) 공격 등 세 가지 유형의 공격을 포함하고 있습니다. 데이터셋은 실제 차량의 OBD-II(On-Board Diagnostics II) 포트를 통해 CAN 트래픽을 캡처하면서 시뮬레이션된 메시지 공격이 실행되는 동안에 수집되었습니다. 데이터셋 내의 속성은 타임스탬프(Timestamp), CAN ID, 데이터 길이 코드(DLC, Data Length Code), DATA[0]에서 DATA[7]까지, 그리고 플래그(Flag)를 포함합니다. [13]에 자세히 설명된 각 공격 유형에 대한 추가적인 통찰은 다음과 같습니다:
 1) DoS 공격: ‘0x000’과 같은 고우선순위의 CAN 메시지를 주입하는 것을 포함합니다.
 
@@ -172,7 +172,7 @@ VI. DATASETS
 
 3) RPM/Gear(RPM/기어) 공격: RPM 및 기어 정보와 관련된 특정 CAN ID와 연관된 메시지의 주입을 중심으로 합니다. RPM 및 기어와 관련된 메시지는 1밀리초 간격으로 도입되었습니다. 이러한 공격은 현대 YF 쏘나타 내에서 실제 상황 및 행동을 재현하고자 CAN 네트워크에 메시지를 도입함으로써 실행되었습니다. 차량 해킹 데이터셋에 대한 개요는 표 I에서 제시됩니다.
 
-VII. EXPERIMENTS AND RESULTS
+VII. EXPERIMENTS AND RESULTS <br>
 이 section에서는 제안된 모델을 학습(train)하고 평가(evaluate)하기 위해 데이터셋을 어떻게 처리하는지에 대해 설명합니다. 실험적 설정(experimental setup), 사용된 하이퍼파라미터(hyperparameters), 그리고 모델의 복잡성(complexity)이 소개되며, 실험 결과에 대한 광범위한 논의와 주목할 만한 관찰 결과가 강조됩니다.
 
 A. 하이퍼파라미터 세밀 조정(Fine-tuning of Hyperparameters)
@@ -185,12 +185,12 @@ A. 하이퍼파라미터 세밀 조정(Fine-tuning of Hyperparameters)
 LoRA 설정: LoRA(Low-Rank Adaptation)는 학습 파이프라인에 통합되며, LoRA 주의 차원은 16, 알파 파라미터는 64로 설정되고, LoRA 레이어에는 0.1의 드롭아웃 확률과 0의 편향 값이 적용됩니다.
 학습 기간: 모든 세 모델은 총 10 에폭 동안 학습됩니다.
 
-B. Model Complexity
+B. Model Complexity <br>
 Table II 미세 조정(fine-tuning)된 모델 크기와 파라미터에 대한 비교 분석을 제공합니다. CAN-C-BERT와 CAN-SecureBERT는 훈련 중 모든 파라미터를 미세 조정(fine-tuning)할 수 있는 기능을 제공합니다. 특히, 1% 훈련 데이터셋을 사용할 때, 이 모델들의 훈련 시간은 각각 약 4분과 5분입니다. 반면에, CAN-LLAMA2 모델을 훈련하는데는 118분이라는 훨씬 많은 시간이 필요합니다. 그러나 CAN-LLAMA2의 추론(inference) 속도는 다른 두 모델보다 약 8배 느립니다. 이 차이는 주로 계산 자원의 제한 때문입니다. CAN-LLAMA2는 70억(7 billion) 파라미터를 포함하고 있습니다. LoRA를 구현한 후, 모델의 선형 레이어(linear layers)에서 약 4천만(40 million) 파라미터를 미세 조정(fine-tuning)할 수 있습니다. 그러나 CAN-LLAMA2의 행렬 곱셈(matrix multiplication), 활성화(activation), 그리고 다른 수학적 연산에 대한 계산 요구사항은 다른 두 모델보다 훨씬 높습니다. 또한, GPU 메모리 크기의 제한으로 인해, CAN-LLAMA2는 검증(validation)을 위해 최대 16개의 CAN 메시지 배치 크기(batch size)만 수용할 수 있습니다.
 
 미세 조정(fine-tuning) 중에 CAN-LLAMA2 모델의 파라미터 중 오직 0.57%만 변경된다는 것은 또 다른 주목할 만한 관찰입니다. 이는 LLAMA2 모델의 원래 파라미터 대부분이 변경되지 않는다는 것을 의미합니다. 따라서, CAN-LLAMA2는 다른 언어 관련 작업에 재사용될 수 있습니다. VSOC 팀은 사전 훈련된(pretrained) 모델을 미세 조정(fine-tuning)하고 어댑터 헤드(adapter heads)를 추가하여 다양한 다운스트림(downstream) 작업을 수행함으로써 동일한 모델을 활용할 수 있습니다. 
 
-C. Results
+C. Results <br>
 
 이 section에서는 우리의 연구 질문에 대응하고 제안된 모델(model)의 성능(performance)에 대한 통찰(insights)을 얻기 위해 결과에 대한 철저한 분석(analysis)을 수행합니다. 
 
@@ -277,14 +277,14 @@ Balanced Accuracy(BA, 균형 정확도), Precision(PREC, 정밀도), Detection R
 | RPM Spoofing | 131324               | 1.0      | 1.0       | 0        | 1.0       |
 
 
-D. Discussions
+D. Discussions <br>
 위의 결과를 요약하면, 큰 데이터셋으로 훈련된 모델이 작은 데이터셋으로 훈련된 모델보다 일반화(generalization) 성능이 더 우수함을 보여줍니다. 이는 훈련 손실(training loss)과 검증 손실(validation loss)의 변화 추세에서 명확히 관찰됩니다. 특히, 10% 데이터로 훈련된 모델이 1% 데이터로 훈련된 모델보다 BA(Balance Accuracy), PREC(Precision), DR(Detection Rate), F1 점수에서 일관되게 더 나은 성능을 보입니다.
 CAN 메시지 로그 분류에서 모든 제안된 모델은 뛰어난 성능을 달성하며, 이는 원시 텍스트(raw text) 기반의 CAN 메시지를 직접 처리함으로써 달성됩니다. 이러한 모델들의 BA, PREC, DR, F1 점수는 모두 0.99를 초과합니다. 이는 트랜스포머(transformer) 기반 모델이 특징 엔지니어링(feature engineering)과 데이터 전처리(data preprocessing) 없이도 CAN 메시지 로그를 효과적으로 분류할 수 있음을 의미합니다.
 CAN-LLAMA2는 특히 1% 데이터만을 가진 상태에서도 다른 모델보다 빠르게 수렴(convergence)하며, 이는 CAN-LLAMA2가 복잡한 CAN 메시지 패턴을 더 잘 포착할 수 있는 능력을 가지고 있음을 나타냅니다. 더 많은 레이어와 매개변수를 가진 CAN-LLAMA2는 레이어 간 정보 공유를 통해 더 빠른 수렴에 기여합니다.
 더 많은 사전 훈련된 지식을 가진 모델은 덜 훈련된 모델보다 성능이 좋으며, LLAMA2는 BERT와 SecureBERT에 비해 더 큰 데이터셋에서 사전 훈련됩니다. LLAMA2는 더 많은 매개변수를 가지고 있으며, 이는 더 많은 사전 훈련된 지식을 포착하는 데 기여합니다. 그러나 LoRa 적용 후에는 매개변수의 일부만 미세 조정(tuning)될 수 있음에도 불구하고, CAN-LLAMA2는 다른 모델을 능가합니다.
 CAN-SecureBERT는 사이버 보안(cybersecurity)에 초점을 맞춘 데이터로 훈련된 SecureBERT를 사용하며, 이는 CAN-C-BERT보다 우수하지만 CAN-LLAMA2보다는 다소 낮은 성능을 보입니다. 매개변수 크기가 더 큰 SecureBERT의 성능 차이가 사전 훈련된 도메인 지식이나 매개변수 수 증가에 기인하는지는 명확하지 않습니다
 
-VIII. CONCLUSION
+VIII. CONCLUSION <br>
 이 연구에서는 사전 훈련된 트랜스포머(transformer) 기반 모델을 미세 조정하여 CAN 침입 탐지 및 공격 분류를 위한 새로운 접근 방식을 제안합니다. 구체적으로, CAN-C-BERT, CAN-SecureBERT, CAN-LLAMA2와 같은 세 가지 독특한 모델이 개발되었습니다. 이 모델들은 CAN 메시지 로그를 직접 사용하며, 데이터 전처리가 필요 없습니다. 사전에 균형 잡힌 CAN 데이터셋으로 훈련된 후, 이들 모델의 성능은 최신 모델들과 비교되었습니다. CAN-LLAMA2는 모든 실증적인 최신 IDS(Intrusion Detection System) 시스템보다 더 높은 성능을 보여주며, CAN-SecureBERT는 두 번째로 좋은 모델로 평가되었습니다. 특히, CAN-LLAMA2는 BA, PREC, DR, F1 점수에서 0.999993에 이르고, 3.1e-6의 인상적으로 낮은 FAR(False Alarm Rate)을 달성하여, MTH-IDS의 FAR보다 약 52배 더 우수한 결과를 보였습니다. 전반적으로, 이 연구는 CAN IDS 분야의 발전을 도모하며, 모델 디자인, 성능 및 사이버 보안 응용에 대한 중요한 통찰력을 제공합니다.
 
 IX. FUTURE WORKS
