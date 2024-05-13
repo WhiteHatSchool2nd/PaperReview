@@ -13,8 +13,7 @@ Intrusion-Detection-System-Using-CNN-and-Transfer-Learning
 A. 시스템 개요
 제안된 IDS는 내부 IVN과 외부 차량 네트워크 모두에서 작동하여 다양한 유형의 공격을 탐지할 수 있다. IDS는 CAN 버스 위에 배치되어 비정상적인 CAN 메시지를 감지하고 경보를 생성할 수 있으며, 외부 네트워크에서는 게이트웨이에 통합되어 악의적인 패킷을 식별하고 차단한다.
 
-![image](https://github.com/WhiteHatSchool2nd/Intrusion-Detection-System-Using-CNN-and-Transfer-Learning/assets/128721477/afa2bd41-e35e-4745-b7ef-82470310b3f8)
-
+![image](https://github.com/WhiteHatSchool2nd/PaperReview/assets/128721477/08b6ad9f-0d58-44f0-b35c-7113d0921be4)
 
 B. 데이터 설명 및 변환
 Car-Hacking 데이터셋과 CICIDS2017 데이터셋을 사용하여 내부 및 외부 네트워크 데이터를 대표한다. 이 데이터는 이미지로 변환되어 CNN 모델이 더 효과적으로 작동할 수 있도록 한다. 데이터 변환 과정에서 정량화 정규화 같은 기술이 사용되어 데이터의 특징 분포를 정규 분포로 변환한다.
