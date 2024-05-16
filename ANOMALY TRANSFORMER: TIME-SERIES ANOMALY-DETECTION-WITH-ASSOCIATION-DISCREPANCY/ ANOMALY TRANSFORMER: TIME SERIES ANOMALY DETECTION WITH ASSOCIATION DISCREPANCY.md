@@ -39,3 +39,4 @@
 이 논문(Paper)은 새로운 연관성 기반 기준을 특징으로 합니다. 기존의 랜덤 워크(random walk) 및 부분 시퀀스 기반 방법과 달리, 이 기준은 시간적 모델의 공동 설계를 통해 시간 지점의 연관성을 학습하기 위한 것입니다.
 
 2.2 TRANSFORMERS FOR TIME SERIES ANALYSIS
+최근 변환기(Transformer)는 자연어 처리(Natural Language Processing), 음성 처리(Audio Processing), 컴퓨터 비전(Computer Vision) 등 순차적 데이터 처리(Sequential Data Processing)에서 중요한 역할을 해왔습니다. 시계열 분석(Time Series Analysis)에서도 자기 주의(self-attention) 메커니즘을 통해 장기 시간적 의존성(Long-term Temporal Dependencies)을 탐색하는 데 사용됩니다. 특히, GTA는 IoT 센서 간 관계를 이해하고 이상 감지(Anomaly Detection)를 위해 변환기(Transformer)와 재구성 기준(Reconstruction Criterion)을 사용합니다. 이상 변환기(Anomaly Transformer)는 기존 사용법과 달리 연관성 불일치(Correlation Mismatch)를 기반으로 자기 주의 메커니즘을 이상 주의(Anomaly-Attention)로 혁신함으로써 새로운 접근 방식을 제시합니다.
