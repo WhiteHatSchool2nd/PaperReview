@@ -63,6 +63,7 @@ Figure 1은 이상치 주의 변환기(Anomaly-Attention Transformer)의 구조�
 
 ![수식 2](https://github.com/WhiteHatSchool2nd/PaperReview/assets/165824811/b7b7c368-002d-4350-99c5-a4add16982f9)
 
-Q, K, V ∈ RN×dmodel, σ ∈ RN×1은 각각 self-attention의 쿼리(Query), 키(Key), 값(Value) 및 배워진 스케일을 나타냅니다. WQl, WKl, WVl ∈ Rdmodel×dmodel, Wσl ∈ Rdmodel×1는 l번째 레이어에서 Q, K, V, σ에 대한 매개변수 행렬을 각각 나타냅니다. 사전 연관성(Prior-association) Pl ∈ RN×N은 배워진 스케일 σ ∈ RN×1과 i번째 요소 σi가 i번째 시간 지점에 해당하는 것을 기반으로 생성됩니다. 구체적으로, i번째 시간 지점의 j번째 지점에 대한 연관성 가중치는 가우시안 커널 G(|j − i|; σ) = √(1/(2πσi)) * exp(−(|j−i|^2)/(2σi^2))에 대한 거리 |j − i|를 이용해 계산됩니다. 더 나아가, 우리는 Rescale(·)을 사용하여 행 합으로 나누어 연관성 가중치를 이산 분포 Pl로 변환합니다. Sl ∈ RN×N은 시리즈 연관성을 나타냅니다. Softmax(·)는 마지막 차원을 따라 주의 맵을 정규화합니다.
+![수식 + 내용 1](https://github.com/WhiteHatSchool2nd/PaperReview/assets/165824811/a871015e-80e2-4eea-b5d1-f1767696b4ee)
+
 
 
