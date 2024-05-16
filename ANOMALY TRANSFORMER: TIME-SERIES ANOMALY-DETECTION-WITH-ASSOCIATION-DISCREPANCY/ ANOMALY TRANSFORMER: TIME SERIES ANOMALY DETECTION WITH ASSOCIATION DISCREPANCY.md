@@ -95,7 +95,18 @@ Anomaly Transformer는 세 가지 실용적 응용 분야에서 여섯 가지 �
 **Implementation details** <br>
 Shen et al. (2020)의 프로토콜을 따라, 중복되지 않는 슬라이딩 윈도우(sliding window)를 통해 부분 시리즈(sub-series)를 얻습니다. 모든 데이터셋에 대해 윈도우 크기는 100으로 고정됩니다. 이상 점수(anomaly scores, Equation 6)가 임계값 δ보다 큰 시간 점을 이상(anomalies)으로 라벨링합니다. 검증 데이터셋에서 r 비율이 이상으로 라벨링되도록 δ를 설정, SWaT은 0.1%, SMD는 0.5%, 그 외 데이터셋은 1%로 설정합니다. 연속적인 이상 구간에서 하나의 이상이 감지되면, 그 구간의 모든 이상이 정확히 감지된 것으로 간주하는 조정 전략(adjustment strategy)을 사용합니다. Anomaly Transformer는 3개 레이어(layer)를 가지며, 숨겨진 상태의 채널 번호(dmodel)는 512, 헤드 수(heads, h)는 8입니다. 손실 함수의 두 부분 사이의 균형을 위해 하이퍼파라미터 λ(Equation 4)는 3으로 설정됩니다. 초기 학습률 10^-4의 ADAM 옵티마이저를 사용하며, 훈련은 배치 크기 32로 10 에폭 내에 조기 종료됩니다. 실험은 Pytorch (Paszke et al., 2019)와 NVIDIA TITAN RTX 24GB GPU에서 수행됩니다.
 
+![Figure 3](https://github.com/WhiteHatSchool2nd/PaperReview/assets/165824811/0f88edda-1e62-4db1-9c1b-cca694d1ae35)
+Figure 3 : ROC 곡선(수평축: 거짓 양성 비율(False Positive Rate); 수직축: 진짜 양성 비율(True Positive Rate))은 5개 데이터셋에 대해 제시됩니다. ROC 곡선 아래 영역(AUC 값, Area Under the Curve)이 클수록 성능이 더 좋습니다. 사전에 정의된 임계값 비율(Threshold Ratio) r은 {0.5%, 1.0%, 1.5%, 2.0%, 10%, 20%, 30%} 중에서 선택됩니다.
 
+Table 1 : Anomaly Transformer(우리 모델)의 5개 실제 데이터셋에서의 정량적 결과입니다. P, R, 그리고 F1은 각각 정밀도(Precision), 재현율(Recall), 그리고 F1-점수(F1-score)(%)를 나타냅니다. F1-점수는 정밀도(Precision)와 재현율(Recall)의 조화 평균(Harmonic Mean)입니다. 이 세 가지 지표(Metrics)에 대해, 높은 값(Higher Value)은 더 나은 성능(Better Performance)을 의미합니다.
+![Table 1](https://github.com/WhiteHatSchool2nd/PaperReview/assets/165824811/a0f947bd-978c-452f-a1ab-f6345b9d03ec)
+
+4.1 MAIN RESULTS 
+**Real-world datasets** <br>
+우리는 10개의 경쟁 베이스라인(Competitive Baseline)과 함께 5개의 실제 데이터셋(Real-World Dataset)에서 우리 모델(Anomaly Transformer)을 광범위하게 평가했습니다. 표 1(Table 1)에 나타난 바와 같이, Anomaly Transformer는 모든 벤치마크(Benchmark)에서 일관된 최신 성능(State-of-the-Art)을 달성합니다. 시간 정보(Temporal Information)를 고려하는 심층 모델(Deep Model)이 Deep-SVDD(Ruff et al., 2018), DAGMM(Zong et al., 2018)과 같은 일반적인 이상 탐지 모델(General Anomaly Detection Model)보다 우수한 성능을 보임을 관찰했습니다, 이는 시간 모델링(Temporal Modeling)의 효과를 검증합니다. 우리가 제안한 Anomaly Transformer는 RNN이 학습한 점별(Point-Wise) 표현을 넘어서 더 많은 정보를 담은 연관성(Associations)을 모델링합니다. 표 1의 결과는 시계열 이상 탐지(Time Series Anomaly Detection)에서 연관성 학습(Association Learning)의 장점을 설득력 있게 보여줍니다. 또한, 완전한 비교를 위해 그림 3(Figure 3)에서 ROC 곡선(ROC Curve)을 그렸습니다. Anomaly Transformer는 모든 5개 데이터셋에서 가장 높은 AUC 값(Highest AUC Values)을 가집니다. 이는 다양한 사전 선택된 임계값(Pre-Selected Thresholds) 하에서 거짓 양성 비율(False Positive Rate)과 진짜 양성 비율(True Positive Rate)에서 우리 모델이 잘 수행한다는 것을 의미하며, 이는 실제 세계 응용 프로그램(Real-World Applications)에 중요합니다.
+
+**NeurIPS-TS benchmark** <br>
+이 벤치마크는 Lai et al. (2021)에 의해 제안된 잘 설계된 규칙을 바탕으로 생성되었으며, 점별(point-wise) 이상과 패턴별(pattern-wise) 이상을 포함해 모든 유형의 이상을 완벽하게 포함합니다. 그림 4에서 보이는 바와 같이, Anomaly Transformer는 여전히 최신 성능(state-of-the-art)을 달성합니다. 이는 다양한 이상에 대한 우리 모델의 효과를 검증합니다.
 
 
 
