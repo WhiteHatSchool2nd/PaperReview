@@ -70,6 +70,9 @@ Figure 2 : Minimax association learning은 두 단계로 구성됩니다. minimi
 
 ![수식 + 내용 2](https://github.com/WhiteHatSchool2nd/PaperReview/assets/165824811/ab078abc-adbb-4c63-b11a-683917ff63d5)
 
+![수식 + 내용 3](https://github.com/WhiteHatSchool2nd/PaperReview/assets/165824811/adf1a919-8a9e-45f8-a659-efdb00e56e08)
+
+
 
 
 
