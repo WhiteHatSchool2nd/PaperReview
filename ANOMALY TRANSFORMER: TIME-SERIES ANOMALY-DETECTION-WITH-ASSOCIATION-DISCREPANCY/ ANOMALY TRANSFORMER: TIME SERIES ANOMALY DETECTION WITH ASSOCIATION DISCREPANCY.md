@@ -61,4 +61,8 @@ Figure 1은 이상치 주의 변환기(Anomaly-Attention Transformer)의 구조�
 
 **이상 감지(anomaly detection)** 위해 기존의 단일-가지(self-branch) 자기주의 메커니즘(self-attention mechanism)은 이전 연관성(prior-association)과 시리즈 연관성(series-association)을 동시에 모델링할 수 없다는 한계가 있습니다. 우리는 이를 극복하기 위해 두 가지 가지 구조(two-branch structure)를 가진 이상 주의(Anomaly-Attention)를 제안합니다. 이전 연관성을 위해, 우리는 배울 수 있는 가우시안 커널(Gaussian kernel)을 채택하여 상대적 시간 거리(relative temporal distance)에 대한 사전을 계산합니다. 가우시안 커널의 단일 모드(unimodal) 특성을 활용함으로써, 이 설계는 인접한 범위(adjacent horizon)에 더 많은 주의를 기울일 수 있습니다. 또한, 다양한 시계열 패턴(time series patterns)에 적응할 수 있도록 가우시안 커널에 대한 배울 수 있는 스케일 매개변수(scale parameter, σ)를 사용합니다. 이 두 형태는 각 시간 지점의 시간 의존성(temporal dependencies)을 유지하며, 점 단위 표현(point-wise representation)보다 더 많은 정보를 제공합니다. 따라서 정상(normal)과 비정상(abnormal) 사이를 구별할 수 있습니다. l번째 레이어(layer)에서의 이상 주의(Anomaly-Attention)은 원시 시리즈(raw series)로부터 연관성을 학습하는 시리즈 연관성 가지(series-association branch)를 포함하며, 인접 집중 사전(adjacent-concentration prior)과 학습된 실제 연관성(learned real associations)을 각각 반영할 수 있습니다.
 
-![수식 2] (https://github.com/WhiteHatSchool2nd/PaperReview/assets/165824811/d4b5e6bf-8cf0-4c2c-a6e3-0a2c65ec85af)
+![수식 2](https://github.com/WhiteHatSchool2nd/PaperReview/assets/165824811/b7b7c368-002d-4350-99c5-a4add16982f9)
+
+Q, K, V ∈ RN×dmodel, σ ∈ RN×1은 각각 self-attention의 쿼리(Query), 키(Key), 값(Value) 및 배워진 스케일을 나타냅니다. WQl, WKl, WVl ∈ Rdmodel×dmodel, Wσl ∈ Rdmodel×1는 l번째 레이어에서 Q, K, V, σ에 대한 매개변수 행렬을 각각 나타냅니다. 사전 연관성(Prior-association) Pl ∈ RN×N은 배워진 스케일 σ ∈ RN×1과 i번째 요소 σi가 i번째 시간 지점에 해당하는 것을 기반으로 생성됩니다. 구체적으로, i번째 시간 지점의 j번째 지점에 대한 연관성 가중치는 가우시안 커널 G(|j − i|; σ) = √(1/(2πσi)) * exp(−(|j−i|^2)/(2σi^2))에 대한 거리 |j − i|를 이용해 계산됩니다. 더 나아가, 우리는 Rescale(·)을 사용하여 행 합으로 나누어 연관성 가중치를 이산 분포 Pl로 변환합니다. Sl ∈ RN×N은 시리즈 연관성을 나타냅니다. Softmax(·)는 마지막 차원을 따라 주의 맵을 정규화합니다.
+
+
