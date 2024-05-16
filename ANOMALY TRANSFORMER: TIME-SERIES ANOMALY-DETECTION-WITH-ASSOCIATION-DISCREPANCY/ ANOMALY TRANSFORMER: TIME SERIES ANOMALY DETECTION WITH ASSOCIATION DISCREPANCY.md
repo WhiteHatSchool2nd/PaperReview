@@ -55,7 +55,9 @@ $$
 X = \text{Layer-Norm} \left( \text{Feed-Forward}(Z) + Z \right)
 $$
 
-![layer_output_dimension](https://github.com/WhiteHatSchool2nd/PaperReview/assets/165824811/2dd81067-3b67-43e2-8544-7e370a7b5705)
-
+$X^l \in \mathbb{R}^{N \times d_{\text{model}}}$, $l \in \{1, \ldots, L\}$은 $d_{\text{model}}$ 채널을 가진 $l$-번째 계층의 출력을 나타냅니다.
+초기 입력 $X^0 = \text{Embedding}(X)$는 임베디드 원시 시리즈를 나타냅니다.
+$Z^l \in \mathbb{R}^{N \times d_{\text{model}}}$은 $l$-번째 계층의 숨겨진 표현입니다.
+$\text{Anomaly-Attention}(\cdot)$은 연관성의 차이를 계산하기 위해 사용됩니다.
 
 
