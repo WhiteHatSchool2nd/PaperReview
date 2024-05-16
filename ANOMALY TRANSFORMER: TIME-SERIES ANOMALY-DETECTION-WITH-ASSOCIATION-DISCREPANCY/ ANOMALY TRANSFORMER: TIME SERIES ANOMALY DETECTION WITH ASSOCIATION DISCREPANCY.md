@@ -65,7 +65,8 @@ Figure 1은 이상치 주의 변환기(Anomaly-Attention Transformer)의 구조�
 
 ![수식 + 내용 1](https://github.com/WhiteHatSchool2nd/PaperReview/assets/165824811/a871015e-80e2-4eea-b5d1-f1767696b4ee)
 
-![Figure 2](https://github.com/WhiteHatSchool2nd/PaperReview/assets/165824811/e52ffd2b-4e14-4d9b-8ec5-e8023a824716){: width="892"}
+![Figure 2](https://github.com/WhiteHatSchool2nd/PaperReview/assets/165824811/e52ffd2b-4e14-4d9b-8ec5-e8023a824716)
+Figure 2 : Minimax association learning은 두 단계로 구성됩니다. minimize 단계에서는 가우스 커널(Gaussian kernel)에 의해 유도된 분포 가족 내에서 연관성 차이(Association Discrepancy)를 최소화합니다. 이 단계에서는 사전 연관성(prior-association)이 사용됩니다. 다음으로, maximize 단계에서는 복원 손실(reconstruction loss) 하에 연관성 차이를 최대화하는 작업이 수행됩니다. 이때 시리즈 연관성(series-association)이 사용됩니다.
 
 
 
