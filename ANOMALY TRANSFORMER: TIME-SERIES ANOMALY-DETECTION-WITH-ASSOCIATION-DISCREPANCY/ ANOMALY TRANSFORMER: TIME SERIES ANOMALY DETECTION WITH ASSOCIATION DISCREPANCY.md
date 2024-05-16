@@ -28,5 +28,14 @@
 
 ## 2 RELATED WORK
 2-1 UNSUPERVISED TIME SERIES ANOMALY DETECTION
+이 논문(Paper) 비지도 시계열 이상 감지(unsupervised time-series anomaly detection)라는 중요한 실제 문제를 다룹니다. 이상 결정 기준에 따라, 패러다임은 대체로 밀도 추정(density estimation), 클러스터링 기반(clustering-based), 재구성 기반(reconstruction-based) 및 자기 회귀 기반(autoregression-based) 방법을 포함합니다. 밀도 추정 방법에서는, 클래식 방법인 로컬 아웃라이어 팩터(LOF, Local Outlier Factor), 연결성 아웃라이어 팩터(COF, Connectivity-based Outlier Factor)가 로컬 밀도와 로컬 연결성을 계산하여 이상을 결정합니다. DAGMM과 MPPCACD는 가우시안 혼합 모델(Gaussian Mixture Model)을 통합하여 표현의 밀도를 추정합니다.
 
+클러스터링 기반 방법에서는 이상 점수(Anomaly Score)가 클러스터 중심까지의 거리로 정의됩니다. SVDD(서포트 벡터 데이터 디스크립션, Support Vector Data Description)와 Deep SVDD는 정상 데이터를 하나의 밀집된 클러스터로 모읍니다. THOC(시간적 계층적 원-클래스, Temporal Hierarchical One-Class)는 계층적 클러스터링을 통해 시간적 특징을 융합하고 이상을 감지합니다. ITAD(통합 텐서 이상 감지, Integrated Tensor Anomaly Detection)는 분해된 텐서에서 클러스터링을 수행합니다.
 
+재구성 기반(Reconstruction-based) 모델은 재구성 오류를 통해 이상을 감지합니다. LSTM-VAE(장단기 기억 - 변이형 오토인코더, Long Short-Term Memory - Variational AutoEncoder) 모델과 OmniAnomaly는 정규화 흐름을 통해 확장된 LSTM-VAE 모델을 사용하며, InterFusion은 계층적 VAE(변이형 오토인코더, Variational AutoEncoder)를 사용하여 여러 시리즈 간의 의존성을 모델링합니다. GAN(생성적 적대 신경망, Generative Adversarial Network)도 재구성 기반(Reconstruction-based) 이상 감지에 사용됩니다.
+
+자기 회귀 기반 모델은 예측 오류를 통해 이상을 감지합니다. VAR(Vector Autoregression)는 ARIMA(AutoRegressive Integrated Moving Average)를 확장한 것이며, LSTM(Long Short-Term Memory)로 대체될 수 있습니다.
+
+이 논문(Paper)은 새로운 연관성 기반 기준을 특징으로 합니다. 기존의 랜덤 워크(random walk) 및 부분 시퀀스 기반 방법과 달리, 이 기준은 시간적 모델의 공동 설계를 통해 시간 지점의 연관성을 학습하기 위한 것입니다.
+
+2.2 TRANSFORMERS FOR TIME SERIES ANALYSIS
