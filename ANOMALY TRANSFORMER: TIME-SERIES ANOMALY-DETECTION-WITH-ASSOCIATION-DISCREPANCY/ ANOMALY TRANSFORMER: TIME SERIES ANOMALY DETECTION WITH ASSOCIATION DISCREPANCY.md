@@ -72,6 +72,10 @@ Figure 2 : Minimax association learning은 두 단계로 구성됩니다. minimi
 
 ![수식 + 내용 3](https://github.com/WhiteHatSchool2nd/PaperReview/assets/165824811/adf1a919-8a9e-45f8-a659-efdb00e56e08)
 
+**Association Discrepancy** 
+비지도 학습(unsupervised learning) 작업에서, 우리는 모델을 최적화하기 위해 재구성 손실(reconstruction loss)을 사용합니다. 이 손실은 시리즈 연관(series-association)이 가장 유익한 연결을 찾도록 유도합니다. 또한, 정상과 비정상 시점의 차이를 더욱 확대하기 위해, 연관 불일치(association discrepancy)를 증가시키는 추가적인 손실을 사용합니다. 사전 연관(prior-association)의 단일 모드 특성 때문에, 불일치 손실(discrepancy loss)은 시리즈 연관이 인접하지 않은 영역에 더 집중하도록 하여, 비정상을 재구성하기 더 어렵게 만들고, 비정상을 더 잘 식별할 수 있게 합니다. 입력 시리즈 (X \in \mathbb{R}^{N \times d})에 대한 손실 함수는 다음과 같이 정의됩니다:
+[ L_{Total}(X_b, P, S, \lambda; X) = |X - X_b|_F^2 - \lambda \times |AssDis(P, S; X)|_1 ]
+여기서 (X_b \in \mathbb{R}^{N \times d})는 (X)의 재구성을 나타내며, (|\cdot|_F), (|\cdot|_k)는 각각 프로베니우스 노름(Frobenius norm)과 (k)-노름을 의미합니다. (\lambda)는 손실 항목 간의 균형을 조절하는 매개변수이며, (\lambda > 0)일 때 최적화는 연관 불일치를 확대하는 것을 목표로 합니다. 연관 불일치를 더욱 구별 가능하게 만들기 위한 미니맥스 전략(minimax strategy)이 제안되었습니다.
 
 
 
