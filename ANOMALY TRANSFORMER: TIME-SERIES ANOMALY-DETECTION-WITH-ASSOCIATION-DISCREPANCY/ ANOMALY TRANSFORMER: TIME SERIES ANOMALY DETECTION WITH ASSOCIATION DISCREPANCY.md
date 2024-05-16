@@ -78,7 +78,22 @@ Figure 2 : Minimax association learning은 두 단계로 구성됩니다. minimi
 
 
 ## 4 EXPERIMENTS
+Anomaly Transformer는 세 가지 실용적 응용 분야에서 여섯 가지 벤치마크를 통해 광범위하게 평가되었습니다.
 
+**Datasets** <br>
+(1) SMD(Server Machine Dataset, Su et al., 2019)는 대규모 인터넷 회사에서 수집된 5주간의 데이터셋으로, 38개 차원(dimensions)을 가집니다.
+
+(2) PSM(Pooled Server Metrics, Abdulaal et al., 2021)은 eBay의 여러 애플리케이션 서버 노드에서 내부적으로 수집된 26개 차원의 데이터입니다. 
+
+(3) MSL(Mars Science Laboratory 로버)과 SMAP(Soil Moisture Active Passive 위성)은 NASA(Hundman et al., 2018)에서 공개한 데이터셋으로, 각각 55개와 25개 차원을 갖으며, 우주선 모니터링 시스템의 사건 놀라움 이상(ISA) 보고서에서 유래한 원격 측정 이상 데이터를 포함합니다. 
+
+(4) SWaT(Secure Water Treatment, Mathur & Tippenhauer, 2016)는 연속 운영되는 중요 인프라 시스템의 51개 센서에서 얻은 데이터입니다. 
+
+(5) NeurIPS-TS(NeurIPS 2021 Time Series Benchmark)는 Lai et al., 2021에 의해 제안된 데이터셋으로, 점-전역(point-global), 패턴-문맥(pattern-contextual), 패턴-셰이플릿
+(pattern-shapelet), 패턴-계절(pattern-seasonal), 패턴-추세(pattern-trend)의 다섯 가지 시계열 이상 시나리오를 포함합니다. 통계적 세부사항은 부록의 표 13에 요약되어 있습니다.
+
+**Implementation details** <br>
+Shen et al. (2020)의 프로토콜을 따라, 중복되지 않는 슬라이딩 윈도우(sliding window)를 통해 부분 시리즈(sub-series)를 얻습니다. 모든 데이터셋에 대해 윈도우 크기는 100으로 고정됩니다. 이상 점수(anomaly scores, Equation 6)가 임계값 δ보다 큰 시간 점을 이상(anomalies)으로 라벨링합니다. 검증 데이터셋에서 r 비율이 이상으로 라벨링되도록 δ를 설정, SWaT은 0.1%, SMD는 0.5%, 그 외 데이터셋은 1%로 설정합니다. 연속적인 이상 구간에서 하나의 이상이 감지되면, 그 구간의 모든 이상이 정확히 감지된 것으로 간주하는 조정 전략(adjustment strategy)을 사용합니다. Anomaly Transformer는 3개 레이어(layer)를 가지며, 숨겨진 상태의 채널 번호(dmodel)는 512, 헤드 수(heads, h)는 8입니다. 손실 함수의 두 부분 사이의 균형을 위해 하이퍼파라미터 λ(Equation 4)는 3으로 설정됩니다. 초기 학습률 10^-4의 ADAM 옵티마이저를 사용하며, 훈련은 배치 크기 32로 10 에폭 내에 조기 종료됩니다. 실험은 Pytorch (Paszke et al., 2019)와 NVIDIA TITAN RTX 24GB GPU에서 수행됩니다.
 
 
 
