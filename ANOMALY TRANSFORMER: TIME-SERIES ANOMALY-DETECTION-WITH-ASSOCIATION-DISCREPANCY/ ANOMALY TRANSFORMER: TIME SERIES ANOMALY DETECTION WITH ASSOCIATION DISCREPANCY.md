@@ -40,3 +40,19 @@
 
 2.2 TRANSFORMERS FOR TIME SERIES ANALYSIS
 최근 변환기(Transformer)는 자연어 처리(Natural Language Processing), 음성 처리(Audio Processing), 컴퓨터 비전(Computer Vision) 등 순차적 데이터 처리(Sequential Data Processing)에서 중요한 역할을 해왔습니다. 시계열 분석(Time Series Analysis)에서도 자기 주의(self-attention) 메커니즘을 통해 장기 시간적 의존성(Long-term Temporal Dependencies)을 탐색하는 데 사용됩니다. 특히, GTA는 IoT 센서 간 관계를 이해하고 이상 감지(Anomaly Detection)를 위해 변환기(Transformer)와 재구성 기준(Reconstruction Criterion)을 사용합니다. 이상 변환기(Anomaly Transformer)는 기존 사용법과 달리 연관성 불일치(Correlation Mismatch)를 기반으로 자기 주의 메커니즘을 이상 주의(Anomaly-Attention)로 혁신함으로써 새로운 접근 방식을 제시합니다.
+
+## 3 METHOD
+연속적인 d개의 측정값을 모니터링하고 시간에 따라 일정한 간격으로 관측된 데이터를 기록하는 상황에서, 비지도 시계열 이상 감지(Unsupervised Time Series Anomaly Detection)는 레이블 없이 관측값 xt가 이상한지 아닌지를 결정하는 문제입니다. 이 문제의 핵심은 정보가 풍부한 표현(Informative Representations)을 학습하고 구별 가능한 기준(Distinguishable Criterion)을 찾는 것입니다. Anomaly Transformer는 이를 위해 더 정보가 풍부한 연관성을 발견하고, 연관성 불일치(Association Discrepancy)를 학습함으로써 정상과 비정상을 구별할 수 있는 새로운 접근 방식을 제시합니다. Anomaly-Attention은 사전 연관성(Prior-Association)과 시계열 연관성(Series-Associations)을 구현하고, 미니맥스 최적화(Minimax Optimization) 전략을 통해 구별 가능한 연관성 불일치를 얻습니다. 이 아키텍처와 함께 설계된 연관성 기반 기준(Association-Based Criterion)은 학습된 연관성 불일치를 기반으로 합니다.
+
+3.1 ANOMALY TRANSFORMER
+이상 감지(Anomaly Detection)를 위한 트랜스포머(Transformers)의 한계를 극복하기 위해, 우리는 기존의 아키텍처를 Anomaly-Attention 메커니즘을 포함하는 'Anomaly Transformer'로 개선하였습니다(그림 1 참조). 전반적인 아키텍처(Architecture)는 Anomaly-Attention 블록과 피드-포워드(Feed-Forward) 레이어를 번갈아가며 쌓아 올린 것이 특징입니다. 이러한 적층(Stacking) 구조는 깊은 다중 레벨(Multi-Level) 특징에서 내재하는 연관성(Associations)을 학습하는 데 유리합니다. 모델이 총 L개의 레이어(Layers)를 포함하며 입력 시계열 데이터(Input Time Series Data) (X \in \mathbb{R}^{N \times d})가 N의 길이를 가진다고 가정할 때, l번째 레이어의 전체 방정식(Equations)은 다음과 같이 표현할 수 있습니다.
+
+$$
+Z_l = \text{Layer-Norm} \left( \text{Anomaly-Attention} \left( X_{l-1} \right) + X_{l-1} \right)
+$$
+
+$$
+X = \text{Layer-Norm} \left( \text{Feed-Forward}(Z) + Z \right)
+$$
+
+
