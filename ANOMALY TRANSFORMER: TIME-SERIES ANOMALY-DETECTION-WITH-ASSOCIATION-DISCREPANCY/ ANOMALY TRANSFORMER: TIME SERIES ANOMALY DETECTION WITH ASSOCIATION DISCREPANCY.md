@@ -55,4 +55,7 @@ $$
 X = \text{Layer-Norm} \left( \text{Feed-Forward}(Z) + Z \right)
 $$
 
+![layer_output_dimension](https://github.com/WhiteHatSchool2nd/PaperReview/assets/165824811/2dd81067-3b67-43e2-8544-7e370a7b5705)
+
+
 
