@@ -44,8 +44,9 @@
 ## 3 METHOD
 연속적인 d개의 측정값을 모니터링하고 시간에 따라 일정한 간격으로 관측된 데이터를 기록하는 상황에서, 비지도 시계열 이상 감지(Unsupervised Time Series Anomaly Detection)는 레이블 없이 관측값 xt가 이상한지 아닌지를 결정하는 문제입니다. 이 문제의 핵심은 정보가 풍부한 표현(Informative Representations)을 학습하고 구별 가능한 기준(Distinguishable Criterion)을 찾는 것입니다. Anomaly Transformer는 이를 위해 더 정보가 풍부한 연관성을 발견하고, 연관성 불일치(Association Discrepancy)를 학습함으로써 정상과 비정상을 구별할 수 있는 새로운 접근 방식을 제시합니다. Anomaly-Attention은 사전 연관성(Prior-Association)과 시계열 연관성(Series-Associations)을 구현하고, 미니맥스 최적화(Minimax Optimization) 전략을 통해 구별 가능한 연관성 불일치를 얻습니다. 이 아키텍처와 함께 설계된 연관성 기반 기준(Association-Based Criterion)은 학습된 연관성 불일치를 기반으로 합니다.
 
-3.1 ANOMALY TRANSFORMER
-이상 감지(Anomaly Detection)를 위한 트랜스포머(Transformers)의 한계를 극복하기 위해, 우리는 기존의 아키텍처를 Anomaly-Attention 메커니즘을 포함하는 'Anomaly Transformer'로 개선하였습니다(그림 1 참조). 전반적인 아키텍처(Architecture)는 Anomaly-Attention 블록과 피드-포워드(Feed-Forward) 레이어를 번갈아가며 쌓아 올린 것이 특징입니다. 이러한 적층(Stacking) 구조는 깊은 다중 레벨(Multi-Level) 특징에서 내재하는 연관성(Associations)을 학습하는 데 유리합니다. 모델이 총 L개의 레이어(Layers)를 포함하며 입력 시계열 데이터(Input Time Series Data) (X \in \mathbb{R}^{N \times d})가 N의 길이를 가진다고 가정할 때, l번째 레이어의 전체 방정식(Equations)은 다음과 같이 표현할 수 있습니다.
+3.1 ANOMALY TRANSFORMER <br>
+이상 감지(Anomaly Detection)를 위한 트랜스포머(Transformers)의 한계를 극복하기 위해, 'Anomaly Transformer'를 도입하였습니다. 이 모델은 Anomaly-Attention(이상-주의) 메커니즘과 피드-포워드(Feed-Forward) 레이어를 번갈아 가며 쌓아 올린 구조를 특징으로 합니다. 이 적층(Stacking) 구조는 깊은 다중 레벨(Multi-Level) 특징에서의 연관성(Associations)을 학습하는 데 유리합니다. 모델은 총 L개의 레이어(Layers)를 포함하며, 입력 시계열 데이터(Input Time Series Data)가 N의 길이를 가진다고 가정할 때, l번째 레이어의 방정식은 다음과 같습니다.
+
 
 $$
 Z_l = \text{Layer-Norm} \left( \text{Anomaly-Attention} \left( X_{l-1} \right) + X_{l-1} \right)
@@ -55,9 +56,10 @@ $$
 X = \text{Layer-Norm} \left( \text{Feed-Forward}(Z) + Z \right)
 $$
 
-$X^l \in \mathbb{R}^{N \times d_{\text{model}}}$, $l \in \{1, \ldots, L\}$은 $d_{\text{model}}$ 채널을 가진 $l$-번째 계층의 출력을 나타냅니다.
-초기 입력 $X^0 = \text{Embedding}(X)$는 임베디드 원시 시리즈를 나타냅니다.
-$Z^l \in \mathbb{R}^{N \times d_{\text{model}}}$은 $l$-번째 계층의 숨겨진 표현입니다.
-$\text{Anomaly-Attention}(\cdot)$은 연관성의 차이를 계산하기 위해 사용됩니다.
+![Figure 1](https://github.com/WhiteHatSchool2nd/PaperReview/assets/165824811/94f4af43-7541-48cf-9125-87b53ec7e603)
+Figure 1은 이상치 주의 변환기(Anomaly-Attention Transformer)의 구조를 설명합니다. 이 모델은 사전 연관성(prior association)과 시리즈 연관성(series association)을 동시에 고려합니다. 주요 특징으로는 재구성 손실(reconstruction loss)과 함께, 특별히 설계된 정지-그라디언트(stop-gradient) 메커니즘을 사용하는 최소-최대(minimax) 전략을 통해 최적화가 이루어진다는 점입니다. 이러한 최적화 과정은 사전 및 시리즈 연관성을 제한하여 연관성 차이(association discrepancy)를 더욱 명확하게 구별할 수 있게 합니다.
+
+**이상 감지(anomaly detection)** 위해 기존의 단일-가지(self-branch) 자기주의 메커니즘(self-attention mechanism)은 이전 연관성(prior-association)과 시리즈 연관성(series-association)을 동시에 모델링할 수 없다는 한계가 있습니다. 우리는 이를 극복하기 위해 두 가지 가지 구조(two-branch structure)를 가진 이상 주의(Anomaly-Attention)를 제안합니다. 이전 연관성을 위해, 우리는 배울 수 있는 가우시안 커널(Gaussian kernel)을 채택하여 상대적 시간 거리(relative temporal distance)에 대한 사전을 계산합니다. 가우시안 커널의 단일 모드(unimodal) 특성을 활용함으로써, 이 설계는 인접한 범위(adjacent horizon)에 더 많은 주의를 기울일 수 있습니다. 또한, 다양한 시계열 패턴(time series patterns)에 적응할 수 있도록 가우시안 커널에 대한 배울 수 있는 스케일 매개변수(scale parameter, σ)를 사용합니다. 이 두 형태는 각 시간 지점의 시간 의존성(temporal dependencies)을 유지하며, 점 단위 표현(point-wise representation)보다 더 많은 정보를 제공합니다. 따라서 정상(normal)과 비정상(abnormal) 사이를 구별할 수 있습니다. l번째 레이어(layer)에서의 이상 주의(Anomaly-Attention)은 원시 시리즈(raw series)로부터 연관성을 학습하는 시리즈 연관성 가지(series-association branch)를 포함하며, 인접 집중 사전(adjacent-concentration prior)과 학습된 실제 연관성(learned real associations)을 각각 반영할 수 있습니다.
+
 
 
