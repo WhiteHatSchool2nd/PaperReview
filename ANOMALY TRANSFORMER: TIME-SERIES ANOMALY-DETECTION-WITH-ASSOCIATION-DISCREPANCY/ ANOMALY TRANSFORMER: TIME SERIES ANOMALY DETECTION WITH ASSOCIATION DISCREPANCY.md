@@ -65,6 +65,9 @@ Figure 1은 이상치 주의 변환기(Anomaly-Attention Transformer)의 구조�
 
 ![수식 + 내용 1](https://github.com/WhiteHatSchool2nd/PaperReview/assets/165824811/a871015e-80e2-4eea-b5d1-f1767696b4ee)
 
+![Figure 2](https://github.com/WhiteHatSchool2nd/PaperReview/assets/165824811/e52ffd2b-4e14-4d9b-8ec5-e8023a824716){: width="892"}
+
+
 
 
 
