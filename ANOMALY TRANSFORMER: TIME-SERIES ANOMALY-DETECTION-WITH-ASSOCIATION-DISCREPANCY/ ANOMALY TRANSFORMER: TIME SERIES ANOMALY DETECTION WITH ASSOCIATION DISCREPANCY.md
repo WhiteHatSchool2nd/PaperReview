@@ -108,7 +108,7 @@ Table 1 : Anomaly Transformer(우리 모델)의 5개 실제 데이터셋에서�
 **NeurIPS-TS benchmark** <br>
 이 벤치마크는 Lai et al. (2021)에 의해 제안된 잘 설계된 규칙을 바탕으로 생성되었으며, 점별(point-wise) 이상과 패턴별(pattern-wise) 이상을 포함해 모든 유형의 이상을 완벽하게 포함합니다. 그림 4에서 보이는 바와 같이, Anomaly Transformer는 여전히 최신 성능(state-of-the-art)을 달성합니다. 이는 다양한 이상에 대한 우리 모델의 효과를 검증합니다.
 
-![Figure 4](https://github.com/WhiteHatSchool2nd/PaperReview/assets/165824811/11bb179a-5941-4690-b92f-0fcfd59e5670)
+![Figure 4](https://github.com/WhiteHatSchool2nd/PaperReview/assets/165824811/9f76c701-a26b-4362-b568-72e4ed3c728a)
 
 
 
