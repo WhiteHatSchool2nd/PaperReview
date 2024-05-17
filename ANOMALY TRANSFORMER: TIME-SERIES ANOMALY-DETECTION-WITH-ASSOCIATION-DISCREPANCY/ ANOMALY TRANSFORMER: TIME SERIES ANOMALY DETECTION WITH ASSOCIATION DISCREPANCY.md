@@ -154,6 +154,7 @@ Figure 7 : 슬라이딩 윈도우 크기(sliding window size)에 대한 파라�
 </div>
 
 ## B IMPLEMENTATION DETAILS <br>
+![알고리즘 1](https://github.com/WhiteHatSchool2nd/PaperReview/assets/165824811/10fa2eaa-4194-45b3-831d-96dae939a68a)
 
 
 
