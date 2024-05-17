@@ -219,3 +219,12 @@ Table 7 : 기준 정의(criterion definition)의 절제(ablation) 연구. 비교
 훈련 과정 중 실제 데이터셋에서의 연관성 차이 ∥AssDis(P,S;X)∥₁의 변화 곡선.
 
 ## G MODEL PARAMETER SENSITIVITY
+이 논문에서는 Transformers(Vaswani et al., 2017; Zhou et al., 2021)의 관례를 따라 하이퍼파라미터 L과 d_model을 설정했습니다. 모델 파라미터의 민감도를 평가하기 위해, 다양한 층(L)의 수와 숨겨진 채널(d_model)의 선택에 따른 성능과 효율성을 조사했습니다. 일반적으로 모델 크기를 증가시키면 더 나은 결과를 얻을 수 있지만, 이는 더 큰 메모리와 계산 cost를 수반합니다.
+
+Table 8: 다양한 층(L)의 수에 따른 모델 성능. 
+![Table 8](https://github.com/WhiteHatSchool2nd/PaperReview/assets/165824811/5224dcc2-9b4d-4775-ace1-0ab17510ca1e)
+
+Table 9: 다양한 숨겨진 채널(d_model)의 수에 따른 모델 성능. 이 표는 숨겨진 채널(d_model)의 수를 변화시켰을 때의 모델 성능을 보여줍니다
+![Table 9](https://github.com/WhiteHatSchool2nd/PaperReview/assets/165824811/32a222dd-3ea7-4fca-a8d5-c60efa9722bd)
+
+## H PROTOCOL OF THRESHOLD SELECTION
