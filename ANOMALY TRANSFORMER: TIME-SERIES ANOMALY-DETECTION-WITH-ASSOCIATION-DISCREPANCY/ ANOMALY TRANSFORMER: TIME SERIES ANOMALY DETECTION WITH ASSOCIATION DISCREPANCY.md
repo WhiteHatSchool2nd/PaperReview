@@ -192,3 +192,5 @@ Table 5에서 보듯이, 우리가 제안한 연관성 차이(association discre
 
 Table 6 : 다양한 사전 연관성(prior-association) 정의 하에서의 모델 성능. 우리의 이상 감지 변환기(Anomaly Transformer)는 가우시안 커널(Gaussian kernel)을 사전으로 채택합니다. 파워-로우(Power-law)는 파워-로우 커널(power-law kernel)을 의미합니다.
 
+![Table 6](https://github.com/WhiteHatSchool2nd/PaperReview/assets/165824811/937ccb81-876e-4b2b-bbdd-94f70bd4a773)
+
