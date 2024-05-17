@@ -187,7 +187,7 @@ Table 5에서 보듯이, 우리가 제안한 연관성 차이(association discre
 
 ![알고리즘 2](https://github.com/WhiteHatSchool2nd/PaperReview/assets/165824811/f7103166-0829-401f-9ecf-eafa190f15a7)
 
-## D.3 ABLATION OF PRIOR-ASSOCIATION <br>
+D.3 ABLATION OF PRIOR-ASSOCIATION <br>
 학습 가능한 스케일 매개변수(scale parameter)를 가진 가우시안 커널(Gaussian Kernel) 외에도, 학습 가능한 파워 매개변수(α)를 가진 파워-로우 커널(Power-law Kernel, P(x; α) = x^(-α))을 사전 연관성(prior-association)을 위해 사용해 보았으며, 이것 역시 단봉 분포(unimodal distribution)입니다. Table 6(Table 6)에 나타나 있듯이, 파워-로우 커널은 대부분의 데이터셋(datasets)에서 좋은 성능(performance)을 달성할 수 있습니다. 하지만, 스케일 매개변수가 파워 매개변수보다 최적화하기 쉽기 때문에, 가우시안 커널은 여전히 일관적으로 파워-로우 커널을 능가합니다.
 
 Table 6 : 다양한 사전 연관성(prior-association) 정의 하에서의 모델 성능. 우리의 이상 감지 변환기(Anomaly Transformer)는 가우시안 커널(Gaussian kernel)을 사전으로 채택합니다. 파워-로우(Power-law)는 파워-로우 커널(power-law kernel)을 의미합니다.
