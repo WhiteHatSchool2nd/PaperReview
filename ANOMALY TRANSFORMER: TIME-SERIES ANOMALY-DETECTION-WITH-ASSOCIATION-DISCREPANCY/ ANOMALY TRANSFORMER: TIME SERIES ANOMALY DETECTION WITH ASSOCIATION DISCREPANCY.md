@@ -56,7 +56,7 @@ $$
 X = \text{Layer-Norm} \left( \text{Feed-Forward}(Z) + Z \right)
 $$
 
-![Figure 1](https://github.com/WhiteHatSchool2nd/PaperReview/assets/165824811/94f4af43-7541-48cf-9125-87b53ec7e603)
+![Figure 1](https://github.com/WhiteHatSchool2nd/PaperReview/assets/165824811/94f4af43-7541-48cf-9125-87b53ec7e603) 
 Figure 1은 이상치 주의 변환기(Anomaly-Attention Transformer)의 구조를 설명합니다. 이 모델은 사전 연관성(prior association)과 시리즈 연관성(series association)을 동시에 고려합니다. 주요 특징으로는 재구성 손실(reconstruction loss)과 함께, 특별히 설계된 정지-그라디언트(stop-gradient) 메커니즘을 사용하는 최소-최대(minimax) 전략을 통해 최적화가 이루어진다는 점입니다. 이러한 최적화 과정은 사전 및 시리즈 연관성을 제한하여 연관성 차이(association discrepancy)를 더욱 명확하게 구별할 수 있게 합니다.
 
 **이상 감지(anomaly detection)** 위해 기존의 단일-가지(self-branch) 자기주의 메커니즘(self-attention mechanism)은 이전 연관성(prior-association)과 시리즈 연관성(series-association)을 동시에 모델링할 수 없다는 한계가 있습니다. 우리는 이를 극복하기 위해 두 가지 가지 구조(two-branch structure)를 가진 이상 주의(Anomaly-Attention)를 제안합니다. 이전 연관성을 위해, 우리는 배울 수 있는 가우시안 커널(Gaussian kernel)을 채택하여 상대적 시간 거리(relative temporal distance)에 대한 사전을 계산합니다. 가우시안 커널의 단일 모드(unimodal) 특성을 활용함으로써, 이 설계는 인접한 범위(adjacent horizon)에 더 많은 주의를 기울일 수 있습니다. 또한, 다양한 시계열 패턴(time series patterns)에 적응할 수 있도록 가우시안 커널에 대한 배울 수 있는 스케일 매개변수(scale parameter, σ)를 사용합니다. 이 두 형태는 각 시간 지점의 시간 의존성(temporal dependencies)을 유지하며, 점 단위 표현(point-wise representation)보다 더 많은 정보를 제공합니다. 따라서 정상(normal)과 비정상(abnormal) 사이를 구별할 수 있습니다. l번째 레이어(layer)에서의 이상 주의(Anomaly-Attention)은 원시 시리즈(raw series)로부터 연관성을 학습하는 시리즈 연관성 가지(series-association branch)를 포함하며, 인접 집중 사전(adjacent-concentration prior)과 학습된 실제 연관성(learned real associations)을 각각 반영할 수 있습니다.
@@ -106,14 +106,14 @@ Table 1 : Anomaly Transformer(우리 모델)의 5개 실제 데이터셋에서�
 우리는 10개의 경쟁 베이스라인(Competitive Baseline)과 함께 5개의 실제 데이터셋(Real-World Dataset)에서 우리 모델(Anomaly Transformer)을 광범위하게 평가했습니다. 표 1(Table 1)에 나타난 바와 같이, Anomaly Transformer는 모든 벤치마크(Benchmark)에서 일관된 최신 성능(State-of-the-Art)을 달성합니다. 시간 정보(Temporal Information)를 고려하는 심층 모델(Deep Model)이 Deep-SVDD(Ruff et al., 2018), DAGMM(Zong et al., 2018)과 같은 일반적인 이상 탐지 모델(General Anomaly Detection Model)보다 우수한 성능을 보임을 관찰했습니다, 이는 시간 모델링(Temporal Modeling)의 효과를 검증합니다. 우리가 제안한 Anomaly Transformer는 RNN이 학습한 점별(Point-Wise) 표현을 넘어서 더 많은 정보를 담은 연관성(Associations)을 모델링합니다. 표 1의 결과는 시계열 이상 탐지(Time Series Anomaly Detection)에서 연관성 학습(Association Learning)의 장점을 설득력 있게 보여줍니다. 또한, 완전한 비교를 위해 그림 3(Figure 3)에서 ROC 곡선(ROC Curve)을 그렸습니다. Anomaly Transformer는 모든 5개 데이터셋에서 가장 높은 AUC 값(Highest AUC Values)을 가집니다. 이는 다양한 사전 선택된 임계값(Pre-Selected Thresholds) 하에서 거짓 양성 비율(False Positive Rate)과 진짜 양성 비율(True Positive Rate)에서 우리 모델이 잘 수행한다는 것을 의미하며, 이는 실제 세계 응용 프로그램(Real-World Applications)에 중요합니다.
 
 **NeurIPS-TS benchmark** <br>
-이 벤치마크는 Lai et al. (2021)에 의해 제안된 잘 설계된 규칙을 바탕으로 생성되었으며, 점별(point-wise) 이상과 패턴별(pattern-wise) 이상을 포함해 모든 유형의 이상을 완벽하게 포함합니다. 그림 4에서 보이는 바와 같이, Anomaly Transformer는 여전히 최신 성능(state-of-the-art)을 달성합니다. 이는 다양한 이상에 대한 우리 모델의 효과를 검증합니다.
+이 벤치마크는 Lai et al. (2021)에 의해 제안된 잘 설계된 규칙을 바탕으로 생성되었으며, 점별(point-wise) 이상과 패턴별(pattern-wise) 이상을 포함해 모든 유형의 이상을 완벽하게 포함합니다. 그림 4에서 보이는 바와 같이, Anomaly Transformer는 여전히 최신 성능(state-of-the-art)을 달성합니다. 이는 다양한 이상에 대한 우리 모델의 효과를 검증합니다. <br>
 
 ![Figure 4](https://github.com/WhiteHatSchool2nd/PaperReview/assets/165824811/9f76c701-a26b-4362-b568-72e4ed3c728a)
 
 **Ablation study** <br>
 Table 2에서 우리 모델의 각 부분이 어떤 영향을 주는지 추가 조사했습니다. 연관성 기반 기준(association-based criterion)은 일반적으로 사용되는 재구성 기준(reconstruction criterion)을 지속적으로 능가합니다. 이 기준은 평균 절대 F1-점수(average absolute F1-score)를 18.76% (76.20→94.96) 상승시킵니다. 연관성 차이(association discrepancy)를 기준으로 사용해도 F1-점수(F1-score) 91.55%의 좋은 성능을 보이며, 이전 최신 모델 THOC(F1-score: 88.01%)를 넘어섭니다. 학습 가능한 사전 연관성(learnable prior-association, σ)과 미니맥스 전략(minimax strategy)은 각각 8.43% (79.05→87.48)와 7.48% (87.48→94.96)의 평균 절대 상승을 가져옵니다. 우리가 제안한 이상(Anomaly) Transformer는 순수 Transformer보다 18.34% (76.62→94.96) 높은 성능을 보여줍니다. 이 결과들은 우리 설계의 각 모듈이 효과적이고 필요함을 확인시켜 줍니다. 연관성 차이에 대한 더 많은 분석은 부록 D(Appendix D)에서 확인할 수 있습니다.
 
-Table 2 : Ablation 연구 결과는 이상 감지 기준(anomaly criterion), 사전 연관성(prior-association), 그리고 최적화 전략(optimization strategy)에 초점을 맞추고 있습니다. Recon(재구성), AssDis(연관성 차이), Assoc(연관성 기반 기준)은 각각 순수 재구성 성능, 순수 연관성 차이, 그리고 제안된 연관성 기반 기준을 나타냅니다. Fix는 사전 연관성의 학습 가능한 스케일 매개변수 σ를 1.0로 고정하는 것을 의미합니다. Max(최대화)와 Minimax(미니맥스)는 연관성 차이를 다루는 두 가지 전략인 최대화 방식과 미니맥스 방식을 각각 지칭합니다.
+Table 2 : Ablation 연구 결과는 이상 감지 기준(anomaly criterion), 사전 연관성(prior-association), 그리고 최적화 전략(optimization strategy)에 초점을 맞추고 있습니다. Recon(재구성), AssDis(연관성 차이), Assoc(연관성 기반 기준)은 각각 순수 재구성 성능, 순수 연관성 차이, 그리고 제안된 연관성 기반 기준을 나타냅니다. Fix는 사전 연관성의 학습 가능한 스케일 매개변수 σ를 1.0로 고정하는 것을 의미합니다. Max(최대화)와 Minimax(미니맥스)는 연관성 차이를 다루는 두 가지 전략인 최대화 방식과 미니맥스 방식을 각각 지칭합니다. <br>
 
 ![Table 2](https://github.com/WhiteHatSchool2nd/PaperReview/assets/165824811/a0f947bd-978c-452f-a1ab-f6345b9d03ec)
 
@@ -122,26 +122,10 @@ Table 2 : Ablation 연구 결과는 이상 감지 기준(anomaly criterion), 사
 
 ![Figure 5](https://github.com/WhiteHatSchool2nd/PaperReview/assets/165824811/d2c95f60-d997-4fe8-856e-33d8edcae5f5)
 
-
-**Anomaly criterion visualization** <br>
-직관적인 사례를 얻기 위하여, 연관 기준(association-based criterion)의 작동 방식과 Lai 등(2021)의 분류에 따른 다양한 이상 유형에서의 성능을 그림 5에서 시각화를 통해 탐구합니다. 연관 기준은 일반적으로 더 뚜렷하게 구별됩니다. 특히, 연관 기준은 정상 부분에서 일관되게 작은 값을 얻을 수 있으며, 이는 점-문맥(point-contextual) 및 패턴-계절적(pattern-seasonal) 사례에서 두드러집니다. 반면, 재구성 기준(reconstruction criterion)의 지터(jitter) 곡선은 탐지 과정을 혼란스럽게 하여 실패합니다. 이는 연관 기준이 이상을 강조하고 정상 및 비정상 점에 구별되는 값을 제공하여 탐지의 정확성을 높이고 거짓 양성 비율(false-positive rate)을 줄일 수 있음을 입증합니다.
-
-![Figure 6](https://github.com/WhiteHatSchool2nd/PaperReview/assets/165824811/a3c0fe7a-3b82-45ff-a391-af5c5874e853)
-다양한 유형의 이상(anomalies)에 대해 학습된 스케일(scale) 파라미터(σ) (빨간색으로 강조)
-
-4.2 MODEL ANALYSIS
-모델의 직관적인 이해를 돕기 위해, 이상 감지 기준(anomaly criterion), 학습 가능한 사전 연관성(learnable prior-association), 그리고 최적화 전략(optimization strategy)이라는 세 가지 핵심 설계에 대한 시각화 자료와 통계 결과를 제공합니다.
-
-![Figure 5](https://github.com/WhiteHatSchool2nd/PaperReview/assets/165824811/d2c95f60-d997-4fe8-856e-33d8edcae5f5)
-
 Figure 5 다양한 이상(anomaly) 카테고리 시각화 : NeurIPS-TS 데이터셋의 원시(raw) 시리즈와 해당 복원(reconstruction) 및 연관(association) 기준을 표시합니다. 점별(point-wise) 이상은 빨간 원(circle)으로, 패턴별(pattern-wise) 이상은 빨간 선분(segments)으로 나타납니다. 잘못 감지된(wrongly detected) 사례는 빨간 상자(boxes)로 표시됩니다.
 
-
 **Anomaly criterion visualization** <br>
 직관적인 사례를 얻기 위하여, 연관 기준(association-based criterion)의 작동 방식과 Lai 등(2021)의 분류에 따른 다양한 이상 유형에서의 성능을 그림 5에서 시각화를 통해 탐구합니다. 연관 기준은 일반적으로 더 뚜렷하게 구별됩니다. 특히, 연관 기준은 정상 부분에서 일관되게 작은 값을 얻을 수 있으며, 이는 점-문맥(point-contextual) 및 패턴-계절적(pattern-seasonal) 사례에서 두드러집니다. 반면, 재구성 기준(reconstruction criterion)의 지터(jitter) 곡선은 탐지 과정을 혼란스럽게 하여 실패합니다. 이는 연관 기준이 이상을 강조하고 정상 및 비정상 점에 구별되는 값을 제공하여 탐지의 정확성을 높이고 거짓 양성 비율(false-positive rate)을 줄일 수 있음을 입증합니다.
-
-![Figure 6](https://github.com/WhiteHatSchool2nd/PaperReview/assets/165824811/a3c0fe7a-3b82-45ff-a391-af5c5874e853)
-다양한 유형의 이상(anomalies)에 대해 학습된 스케일(scale) 파라미터(σ) (빨간색으로 강조)
 
 **Prior-association visualization** <br>
 미니맥스(minimax) 최적화 동안, 사전 연관(prior-association)은 시리즈 연관(series-association)에 가까워지도록 학습됩니다. 따라서, 학습된 σ는 시계열의 인접 집중도(adjacent-concentrating degree)를 반영합니다. 그림 6에서, σ가 시계열의 다양한 데이터 패턴에 적응하여 변화한다는 것을 발견했습니다. 특히, 이상 현상(anomalies)의 사전 연관은 일반 시간 지점보다 작은 σ를 가지며, 이는 이상 현상의 인접 집중 유도 편향(adjacent-concentration inductive bias)과 일치합니다.
@@ -149,4 +133,4 @@ Figure 5 다양한 이상(anomaly) 카테고리 시각화 : NeurIPS-TS 데이터
 **Optimization strategy analysis** <br>
 재구성 손실(reconstruction loss)만 사용할 경우, 이상(abnormal) 및 정상(normal) 시간 지점들은 인접(adjacent) 시간 지점들에 대한 연관 가중치(association weights)에서 유사한 성능을 보여, 대조 값(contrast value)이 1에 가깝게 나타납니다(표 3). 연관 차이(association discrepancy)를 최대화하는 것은 시리즈 연관(series-association)이 비인접(non-adjacent) 영역에 더 많은 주의를 기울이도록 강제합니다. 그러나, 더 나은 재구성을 얻기 위해서, 이상 현상은 정상 시간 지점들에 비해 훨씬 큰 인접 연관 가중치를 유지해야 하며, 이는 더 큰 대조 값에 해당합니다. 하지만 직접적인 최대화(direct maximization)는 가우시안 커널(Gaussian kernel)의 최적화 문제를 일으키며, 예상대로 정상 및 이상 시간 지점들 사이의 차이를 강하게 확대할 수 없습니다(SMD: 1.15→1.27). 미니맥스(minimax) 전략은 사전 연관(prior-association)을 최적화하여 시리즈 연관에 더 강한 제약을 제공합니다. 따라서, 미니맥스 전략은 직접 최대화보다 더 구별 가능한 대조 값들을 얻어(SMD: 1.27→2.39) 더 나은 성능을 발휘합니다.
 
-https://github.com/WhiteHatSchool2nd/PaperReview/assets/165824811/c8dce3de-5b8f-4237-9403-1dfd3e4f0e99
+Table 3 : 
