@@ -218,3 +218,4 @@ Table 7 : 기준 정의(criterion definition)의 절제(ablation) 연구. 비교
 ![Figure 11](https://github.com/WhiteHatSchool2nd/PaperReview/assets/165824811/9c014f15-d497-4597-8ff8-5c20ddbda0c1)
 훈련 과정 중 실제 데이터셋에서의 연관성 차이 ∥AssDis(P,S;X)∥₁의 변화 곡선.
 
+## G MODEL PARAMETER SENSITIVITY
