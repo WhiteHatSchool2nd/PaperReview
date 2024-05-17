@@ -120,4 +120,6 @@ Table 2 : Ablation 연구 결과는 이상 감지 기준(anomaly criterion), 사
 4.2 MODEL ANALYSIS
 모델의 직관적인 이해를 돕기 위해, 이상 감지 기준(anomaly criterion), 학습 가능한 사전 연관성(learnable prior-association), 그리고 최적화 전략(optimization strategy)이라는 세 가지 핵심 설계에 대한 시각화 자료와 통계 결과를 제공합니다.
 
+![Figure 4](https://github.com/WhiteHatSchool2nd/PaperReview/assets/165824811/d2c95f60-d997-4fe8-856e-33d8edcae5f5)
+
 
