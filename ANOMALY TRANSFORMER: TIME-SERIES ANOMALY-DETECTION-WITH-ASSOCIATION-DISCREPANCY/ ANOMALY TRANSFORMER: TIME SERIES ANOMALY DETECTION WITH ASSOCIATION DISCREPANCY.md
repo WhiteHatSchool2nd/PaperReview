@@ -127,6 +127,12 @@ Figure 5 다양한 이상(anomaly) 카테고리 시각화 : NeurIPS-TS 데이터
 **Anomaly criterion visualization** <br>
 직관적인 사례를 얻기 위하여, 연관 기준(association-based criterion)의 작동 방식과 Lai 등(2021)의 분류에 따른 다양한 이상 유형에서의 성능을 그림 5에서 시각화를 통해 탐구합니다. 연관 기준은 일반적으로 더 뚜렷하게 구별됩니다. 특히, 연관 기준은 정상 부분에서 일관되게 작은 값을 얻을 수 있으며, 이는 점-문맥(point-contextual) 및 패턴-계절적(pattern-seasonal) 사례에서 두드러집니다. 반면, 재구성 기준(reconstruction criterion)의 지터(jitter) 곡선은 탐지 과정을 혼란스럽게 하여 실패합니다. 이는 연관 기준이 이상을 강조하고 정상 및 비정상 점에 구별되는 값을 제공하여 탐지의 정확성을 높이고 거짓 양성 비율(false-positive rate)을 줄일 수 있음을 입증합니다.
 
+
+![Figure 6](https://github.com/WhiteHatSchool2nd/PaperReview/assets/165824811/a3c0fe7a-3b82-45ff-a391-af5c5874e853)
+<div align="center">
+Figure 6은 다양한 유형의 이상(anomalies)에 대해 학습된 스케일 매개변수 σ(σ)를 보여줍니다 (빨간색으로 강조).
+</div> <br>
+
 **Prior-association visualization** <br>
 미니맥스(minimax) 최적화 동안, 사전 연관(prior-association)은 시리즈 연관(series-association)에 가까워지도록 학습됩니다. 따라서, 학습된 σ는 시계열의 인접 집중도(adjacent-concentrating degree)를 반영합니다. 그림 6에서, σ가 시계열의 다양한 데이터 패턴에 적응하여 변화한다는 것을 발견했습니다. 특히, 이상 현상(anomalies)의 사전 연관은 일반 시간 지점보다 작은 σ를 가지며, 이는 이상 현상의 인접 집중 유도 편향(adjacent-concentration inductive bias)과 일치합니다.
 
@@ -141,5 +147,8 @@ Table 3 : 이상(Anormal) 및 정상(Normal) 시간 지점들에 대한 인접 �
 이 논문은 비지도 시계열 이상 탐지(Unsupervised Time Series Anomaly Detection) 문제를 다룹니다. 기존 방법들과 달리, 우리는 트랜스포머(Transformers)를 통해 더 많은 정보를 담은 시간 지점의 연관성을 학습합니다. 연관 차이(Association Discrepancy)의 핵심 관찰을 기반으로, 이상-주의(Anomaly-Attention)를 포함하고 이중 분기 구조(Two-Branch Structure)로 연관 차이를 구현하는 이상 트랜스포머(Anomaly Transformer)를 제안합니다. 정상(Normal)과 이상(Abnormal) 시간 지점 간의 차이를 더욱 확대하기 위해 미니맥스 전략(Minimax Strategy)이 적용됩니다. 연관 차이를 도입함으로써, 재구성 성능(Reconstruction Performance)과 연관 차이가 협력하는 연관 기반 기준(Association-Based Criterion)을 제안합니다. 이상 트랜스포머는 광범위한 경험적 연구 세트에서 최신 기술(State-of-the-Art) 결과를 달성합니다. 향후 연구에는 자동 회귀(Autoregression) 및 상태 공간 모델(State Space Models)에 대한 고전 분석을 바탕으로 한 이상 트랜스포머의 이론적 연구가 포함됩니다.
 
 ## A PARAMETER SENSITIVITY
+그림 7(Figure 7)은 창 크기(window size)와 손실 가중치(loss weight)에 따른 모델 성능을 보여줍니다. 모델은 다양한 데이터셋(extensive datasets)에 대해 창 크기에 안정적(stable)입니다. 더 큰 윈도우 크기는 더 큰 메모리 비용(memory cost)과 더 적은 슬라이딩 횟수(sliding number)를 의미합니다. 성능(performance) 관점에서, 창 크기와의 관계는 데이터 패턴(data pattern)에 따라 다르며, SMD 데이터셋에서는 창 크기 50이 더 나은 결과를 보입니다. 손실 가중치 λ(loss weight λ)는 재구성 손실(reconstruction loss)과 연관성 손실(association loss) 사이의 균형을 조절하는 데 사용됩니다. λ는 2에서 4 사이에서 안정적이며, 조절하기 쉽습니다. 이러한 결과는 모델의 민감도(sensitivity)를 입증하며, 이는 응용 프로그램(applications)에서 중요합니다.
+
+![Figure 7](https://github.com/WhiteHatSchool2nd/PaperReview/assets/165824811/98a90a6c-bed8-4b43-be99-e8c1e47a093b)
 
 
