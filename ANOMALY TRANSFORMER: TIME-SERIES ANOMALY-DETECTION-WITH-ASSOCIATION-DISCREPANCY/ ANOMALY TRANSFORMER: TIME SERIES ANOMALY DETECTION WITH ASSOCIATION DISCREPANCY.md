@@ -157,6 +157,9 @@ Figure 7 : 슬라이딩 윈도우 크기(sliding window size)에 대한 파라�
 ![알고리즘 1](https://github.com/WhiteHatSchool2nd/PaperReview/assets/165824811/10fa2eaa-4194-45b3-831d-96dae939a68a)
 
 ## C MORE SHOWCASES <br>
+주요 결과들(표 1, Table 1)을 비교하기 위해, 다양한 기준선(baselines)을 시각화했습니다. Anomaly Transformer는 가장 뚜렷하게 구별될 수 있는 기준(criterion)을 제시합니다(Figure 8). 또한, 실제 데이터셋(real-world dataset)에서도 Anomaly Transformer는 이상(anomalies)을 정확히 탐지할 수 있습니다. 특히, SWaT 데이터셋(SWaT dataset, 그림 9(d))에서 우리 모델은 초기 단계(early stage)에서 이상을 탐지할 수 있어, 기능 장애(malfunctions)의 조기 경보(early warning)와 같은 실세계 응용(real-world applications)에 중요합니다.
+
+![Figure 8](https://github.com/WhiteHatSchool2nd/PaperReview/assets/165824811/b36bfec0-7fc0-4393-823e-be57e2c3bf5d)
 
 
 
