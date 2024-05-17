@@ -248,3 +248,9 @@ Table 11: 모델 성능(Model Performance)
 실제 응용 프로그램에서, 선택된 이상(anomalies)의 수는 인적 자원(human resources)에 의해 결정됩니다. 이용 가능한 자원에 따라 쉽게 결정할 수 있는 더 실용적인 방법으로, 감지된 이상의 수를 비율 r(ratio)에 의해 설정하는 것이 더 합리적입니다.
 
 ## I MORE BASELINES
+
+## J LIMITATIONS AND FUTURE WORK
+
+## K DATASET
+
+## L UCR DATASET
