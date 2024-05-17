@@ -169,8 +169,17 @@ Figure 9 : 실제 데이터셋(real-world datasets)에서 모델이 학습한 �
 D.1 ABLATION OF MULTI-LEVEL QUANTIFICATION
 최종 결과를 위해 여러 층(layers)에서의 연관성 차이(association discrepancy)를 평균화합니다(방정식 6). 우리는 단일 층(single-layer) 사용 시 모델 성능을 추가로 조사합니다. 표 4에 나타난 바와 같이, 다중 층(multiple-layer) 설계가 가장 좋은 성능을 달성하는데, 이는 다중 레벨(multi-level) 정량화의 효과를 검증합니다
 
-<div align="center>모델 레이어(model layers) 선택 차이에 따른 모델 성능(performance)과 연관성 차이(association discrepancy)
-</div>
+모델 레이어(model layers) 선택 차이에 따른 모델 성능(performance)과 연관성 차이(association discrepancy)
 ![Table 4](https://github.com/WhiteHatSchool2nd/PaperReview/assets/165824811/0c3e5157-9348-413d-a720-2984f1d88f11)
+
+D.2 ABLATION OF STATISTICAL DISTANCE
+연관성 차이(association discrepancy) 계산을 위해 다음과 같은 널리 사용되는 통계적 거리(statistical distances)를 선택했습니다:
+대칭화된 쿨백-라이블러 발산(Symmetrized Kullback–Leibler Divergence, SKLD, 우리의 방법).
+젠슨-샤논 발산(Jensen–Shannon Divergence, JSD).
+바세르슈타인 거리(Wasserstein Distance, Wasserstein).
+교차 엔트로피(Cross-Entropy, CE).
+L2 거리(L2 Distance, L2).
+
+Table 5 : 연관성 차이의 다른 정의(definitions)에 따른 모델 성능(performance).
 
 
