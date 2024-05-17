@@ -202,6 +202,6 @@ E.1 CALCULATION
 E.2 ABLATION OF CRITERION DEFINITION
 우리는 순수 연관성 차이(pure association discrepancy), 순수 재구성 성능(pure reconstruction performance) 및 연관성 차이와 재구성 성능의 다양한 조합 방법(덧셈 및 곱셈)을 포함하여 이상 기준(anomaly criterion)의 다른 정의 하에서 모델 성능을 탐구합니다.
 
-[수식 + 내용 6](https://github.com/WhiteHatSchool2nd/PaperReview/assets/165824811/59d1496a-1f28-45a0-81fb-582937f58918)
+[수식 + 내용 6](https://github.com/WhiteHatSchool2nd/PaperReview/assets/165824811/9d2a87a3-5e56-49bd-8ad3-d59334ef1f5f)
 
 
