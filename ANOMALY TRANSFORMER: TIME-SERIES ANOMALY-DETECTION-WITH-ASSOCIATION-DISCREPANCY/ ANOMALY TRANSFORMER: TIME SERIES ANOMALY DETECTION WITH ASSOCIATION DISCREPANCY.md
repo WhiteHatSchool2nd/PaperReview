@@ -209,4 +209,5 @@ Table 7에서, 우리가 제안한 연관성 차이(association discrepancy)를 
 Table 7 : 기준 정의(criterion definition)의 절제(ablation) 연구. 비교를 위해 최신 딥 모델인 THOC(THOC) (Shen et al., 2020)도 포함합니다. AssDis와 Recon은 순수 연관성 차이(pure association discrepancy)와 순수 재구성 성능(pure reconstruction performance)을 각각 나타냅니다. Ours는 곱셈 조합(multiplication combination)을 사용한 우리가 제안한 연관성 기반(association-based) 기준을 의미합니다.
 ![Table 7](https://github.com/WhiteHatSchool2nd/PaperReview/assets/165824811/c8913b71-ee64-4af2-808c-15f492fa757f)
 
+## F CONVERGENCE OF MINIMAX OPTIMIZATION
 
