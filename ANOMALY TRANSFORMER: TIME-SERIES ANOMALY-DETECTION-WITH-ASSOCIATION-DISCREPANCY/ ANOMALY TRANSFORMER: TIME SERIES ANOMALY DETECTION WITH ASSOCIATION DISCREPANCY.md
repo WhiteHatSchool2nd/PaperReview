@@ -266,3 +266,7 @@ Table 13 : 벤치마크의 세부 사항입니다. AR은 전체 데이터셋의 
 
 
 ## L UCR DATASET <br>
+UCR Dataset (KDD2021, Keogh et al., 2021 국제 데이터 마이닝 및 지식 발견(International Conference on Data Mining and Knowledge Discovery) 대회)은 다양한 실제 시나리오를 포함하는 250개의 서브 데이터셋(sub-datasets)으로 구성된 매우 도전적이고 포괄적인 데이터셋입니다. 각 서브 데이터셋은 단일 이상 구간(single anomaly segment)과 단일 차원(one dimension)을 가지며, 길이는 6,684부터 900,000까지 다양합니다. 이 데이터셋들은 훈련 세트(training sets)와 테스트 세트(test sets)로 사전에 분류되어 있습니다. 우리는 UCR 데이터셋에서의 실험을 통해 넓은 평가를 진행하였고, Anomaly Transformer는 이 도전적인 벤치마크(challenging benchmark)에서 최고의 성능(state-of-the-art)을 달성했습니다.
+
+Table 14 : UCR 데이터셋에서의 정량적(quantitative) 결과입니다. IF는 IsolationForest(2008)를 의미하며, Ours는 우리의 Anomaly Transformer를 나타냅니다. P, R, F1은 각각 정밀도(precision, P), 재현율(recall, R), F1-점수(F1-score, F1)(%)를 의미합니다.
+![Table 14](https://github.com/WhiteHatSchool2nd/PaperReview/assets/165824811/435f4794-9fd9-4704-82ba-bd26468be217)
