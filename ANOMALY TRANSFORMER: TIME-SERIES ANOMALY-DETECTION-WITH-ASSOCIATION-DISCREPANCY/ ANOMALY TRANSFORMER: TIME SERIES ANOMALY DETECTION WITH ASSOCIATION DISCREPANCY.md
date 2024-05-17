@@ -165,7 +165,7 @@ Figure 8 : NeurIPS-TS 데이터셋에 대한 학습된 기준(criterion)의 시�
 ![Figure 9](https://github.com/WhiteHatSchool2nd/PaperReview/assets/165824811/4e7a44ed-3ea7-43a7-b9e5-eccacd240873)
 Figure 9 : 실제 데이터셋(real-world datasets)에서 모델이 학습한 기준(criterion)의 시각화(Visualization)입니다. 시각화를 위해 데이터(data)의 한 차원(dimension)을 선택했습니다. 이 시각화 예시들은 해당 데이터셋(datasets)의 테스트 세트(test set)에서 가져온 것입니다.
 
-## D ABLATION OF ASSOCIATION DISCREPANCY
+## D ABLATION OF ASSOCIATION DISCREPANCY <br>
 D.1 ABLATION OF MULTI-LEVEL QUANTIFICATION
 최종 결과를 위해 여러 층(layers)에서의 연관성 차이(association discrepancy)를 평균화합니다(방정식 6). 우리는 단일 층(single-layer) 사용 시 모델 성능을 추가로 조사합니다. 표 4에 나타난 바와 같이, 다중 층(multiple-layer) 설계가 가장 좋은 성능을 달성하는데, 이는 다중 레벨(multi-level) 정량화의 효과를 검증합니다
 
@@ -187,14 +187,20 @@ Table 5에서 보듯이, 우리가 제안한 연관성 차이(association discre
 
 ![알고리즘 2](https://github.com/WhiteHatSchool2nd/PaperReview/assets/165824811/f7103166-0829-401f-9ecf-eafa190f15a7)
 
-## D.3 ABLATION OF PRIOR-ASSOCIATION
+## D.3 ABLATION OF PRIOR-ASSOCIATION <br>
 학습 가능한 스케일 매개변수(scale parameter)를 가진 가우시안 커널(Gaussian Kernel) 외에도, 학습 가능한 파워 매개변수(α)를 가진 파워-로우 커널(Power-law Kernel, P(x; α) = x^(-α))을 사전 연관성(prior-association)을 위해 사용해 보았으며, 이것 역시 단봉 분포(unimodal distribution)입니다. Table 6(Table 6)에 나타나 있듯이, 파워-로우 커널은 대부분의 데이터셋(datasets)에서 좋은 성능(performance)을 달성할 수 있습니다. 하지만, 스케일 매개변수가 파워 매개변수보다 최적화하기 쉽기 때문에, 가우시안 커널은 여전히 일관적으로 파워-로우 커널을 능가합니다.
 
 Table 6 : 다양한 사전 연관성(prior-association) 정의 하에서의 모델 성능. 우리의 이상 감지 변환기(Anomaly Transformer)는 가우시안 커널(Gaussian kernel)을 사전으로 채택합니다. 파워-로우(Power-law)는 파워-로우 커널(power-law kernel)을 의미합니다.
 
 ![Table 6](https://github.com/WhiteHatSchool2nd/PaperReview/assets/165824811/937ccb81-876e-4b2b-bbdd-94f70bd4a773)
 
-## E ABLATION OF ASSOCIATION-BASED CRITERION
+## E ABLATION OF ASSOCIATION-BASED CRITERION <br>
 E.1 CALCULATION
-![알고리즘 3]()
+![알고리즘 3](https://github.com/WhiteHatSchool2nd/PaperReview/assets/165824811/06a985f9-457c-4674-a15c-618ed9f6f5f5)
+
+
+E.2 ABLATION OF CRITERION DEFINITION
+우리는 순수 연관성 차이(pure association discrepancy), 순수 재구성 성능(pure reconstruction performance) 및 연관성 차이와 재구성 성능의 다양한 조합 방법(덧셈 및 곱셈)을 포함하여 이상 기준(anomaly criterion)의 다른 정의 하에서 모델 성능을 탐구합니다.
+
+[수식 + 내용 6](https://github.com/WhiteHatSchool2nd/PaperReview/assets/165824811/59d1496a-1f28-45a0-81fb-582937f5891)
 
