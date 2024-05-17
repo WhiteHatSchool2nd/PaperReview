@@ -110,5 +110,14 @@ Table 1 : Anomaly Transformer(우리 모델)의 5개 실제 데이터셋에서�
 
 ![Figure 4](https://github.com/WhiteHatSchool2nd/PaperReview/assets/165824811/9f76c701-a26b-4362-b568-72e4ed3c728a)
 
+**Ablation study** <br>
+Table 2에서 우리 모델의 각 부분이 어떤 영향을 주는지 추가 조사했습니다. 연관성 기반 기준(association-based criterion)은 일반적으로 사용되는 재구성 기준(reconstruction criterion)을 지속적으로 능가합니다. 이 기준은 평균 절대 F1-점수(average absolute F1-score)를 18.76% (76.20→94.96) 상승시킵니다. 연관성 차이(association discrepancy)를 기준으로 사용해도 F1-점수(F1-score) 91.55%의 좋은 성능을 보이며, 이전 최신 모델 THOC(F1-score: 88.01%)를 넘어섭니다. 학습 가능한 사전 연관성(learnable prior-association, σ)과 미니맥스 전략(minimax strategy)은 각각 8.43% (79.05→87.48)와 7.48% (87.48→94.96)의 평균 절대 상승을 가져옵니다. 우리가 제안한 이상(Anomaly) Transformer는 순수 Transformer보다 18.34% (76.62→94.96) 높은 성능을 보여줍니다. 이 결과들은 우리 설계의 각 모듈이 효과적이고 필요함을 확인시켜 줍니다. 연관성 차이에 대한 더 많은 분석은 부록 D(Appendix D)에서 확인할 수 있습니다.
+
+Table 2 : Ablation 연구 결과는 이상 감지 기준(anomaly criterion), 사전 연관성(prior-association), 그리고 최적화 전략(optimization strategy)에 초점을 맞추고 있습니다. Recon(재구성), AssDis(연관성 차이), Assoc(연관성 기반 기준)은 각각 순수 재구성 성능, 순수 연관성 차이, 그리고 제안된 연관성 기반 기준을 나타냅니다. Fix는 사전 연관성의 학습 가능한 스케일 매개변수 σ를 1.0로 고정하는 것을 의미합니다. Max(최대화)와 Minimax(미니맥스)는 연관성 차이를 다루는 두 가지 전략인 최대화 방식과 미니맥스 방식을 각각 지칭합니다.
+
+![Table 2](https://github.com/WhiteHatSchool2nd/PaperReview/assets/165824811/a0f947bd-978c-452f-a1ab-f6345b9d03ec)
+
+4.2 MODEL ANALYSIS
+모델의 직관적인 이해를 돕기 위해, 이상 감지 기준(anomaly criterion), 학습 가능한 사전 연관성(learnable prior-association), 그리고 최적화 전략(optimization strategy)이라는 세 가지 핵심 설계에 대한 시각화 자료와 통계 결과를 제공합니다.
 
 
