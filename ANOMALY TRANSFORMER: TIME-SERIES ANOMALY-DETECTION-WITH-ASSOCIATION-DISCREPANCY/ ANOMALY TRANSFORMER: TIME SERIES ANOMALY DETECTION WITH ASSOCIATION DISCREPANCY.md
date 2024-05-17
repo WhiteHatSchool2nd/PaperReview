@@ -141,14 +141,17 @@ Figure 6은 다양한 유형의 이상(anomalies)에 대해 학습된 스케일 
 
 Table 3 : 이상(Anormal) 및 정상(Normal) 시간 지점들에 대한 인접 연관 가중치의 통계 결과입니다. Recon, Max, Minimax는 각각 재구성 손실(Reconstruction Loss), 직접 최대화(Direct Maximization), 미니맥스 전략(Minimax Strategy)에 의해 관리되는 연관 학습 과정을 나타냅니다. 높은 대조 값(Abnormal)은 정상(Normal) 및 이상(Anormal) 시간 지점들 사이의 더 강한 구별 가능성(Distinguishability)을 나타냅니다.
 
-![Table 3](https://github.com/WhiteHatSchool2nd/PaperReview/assets/165824811/c8dce3de-5b8f-4237-9403-1dfd3e4f0e99)
-
-## 5 CONCLUSION AND FUTURE WORK
+## 5 CONCLUSION AND FUTURE WORK <br>
 이 논문은 비지도 시계열 이상 탐지(Unsupervised Time Series Anomaly Detection) 문제를 다룹니다. 기존 방법들과 달리, 우리는 트랜스포머(Transformers)를 통해 더 많은 정보를 담은 시간 지점의 연관성을 학습합니다. 연관 차이(Association Discrepancy)의 핵심 관찰을 기반으로, 이상-주의(Anomaly-Attention)를 포함하고 이중 분기 구조(Two-Branch Structure)로 연관 차이를 구현하는 이상 트랜스포머(Anomaly Transformer)를 제안합니다. 정상(Normal)과 이상(Abnormal) 시간 지점 간의 차이를 더욱 확대하기 위해 미니맥스 전략(Minimax Strategy)이 적용됩니다. 연관 차이를 도입함으로써, 재구성 성능(Reconstruction Performance)과 연관 차이가 협력하는 연관 기반 기준(Association-Based Criterion)을 제안합니다. 이상 트랜스포머는 광범위한 경험적 연구 세트에서 최신 기술(State-of-the-Art) 결과를 달성합니다. 향후 연구에는 자동 회귀(Autoregression) 및 상태 공간 모델(State Space Models)에 대한 고전 분석을 바탕으로 한 이상 트랜스포머의 이론적 연구가 포함됩니다.
 
-## A PARAMETER SENSITIVITY
+## A PARAMETER SENSITIVITY <br>
 그림 7(Figure 7)은 창 크기(window size)와 손실 가중치(loss weight)에 따른 모델 성능을 보여줍니다. 모델은 다양한 데이터셋(extensive datasets)에 대해 창 크기에 안정적(stable)입니다. 더 큰 윈도우 크기는 더 큰 메모리 비용(memory cost)과 더 적은 슬라이딩 횟수(sliding number)를 의미합니다. 성능(performance) 관점에서, 창 크기와의 관계는 데이터 패턴(data pattern)에 따라 다르며, SMD 데이터셋에서는 창 크기 50이 더 나은 결과를 보입니다. 손실 가중치 λ(loss weight λ)는 재구성 손실(reconstruction loss)과 연관성 손실(association loss) 사이의 균형을 조절하는 데 사용됩니다. λ는 2에서 4 사이에서 안정적이며, 조절하기 쉽습니다. 이러한 결과는 모델의 민감도(sensitivity)를 입증하며, 이는 응용 프로그램(applications)에서 중요합니다.
 
 ![Figure 7](https://github.com/WhiteHatSchool2nd/PaperReview/assets/165824811/98a90a6c-bed8-4b43-be99-e8c1e47a093b)
+
+Figure 7 : 슬라이딩 윈도우 크기(sliding window size)에 대한 파라미터 감도(왼쪽)와 손실 가중치 λ(loss weight λ) (오른쪽). λ = 0일 때의 모델은 여전히 연관성 기반 기준(association-based criterion)을 채택하지만, 오직 재구성 손실(reconstruction loss)에 의해서만 감독됩니다.
+
+## B IMPLEMENTATION DETAILS <br>
+
 
 
