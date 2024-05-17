@@ -149,7 +149,9 @@ Table 3 : 이상(Anormal) 및 정상(Normal) 시간 지점들에 대한 인접 �
 
 ![Figure 7](https://github.com/WhiteHatSchool2nd/PaperReview/assets/165824811/98a90a6c-bed8-4b43-be99-e8c1e47a093b)
 
+<div align="center">
 Figure 7 : 슬라이딩 윈도우 크기(sliding window size)에 대한 파라미터 감도(왼쪽)와 손실 가중치 λ(loss weight λ) (오른쪽). λ = 0일 때의 모델은 여전히 연관성 기반 기준(association-based criterion)을 채택하지만, 오직 재구성 손실(reconstruction loss)에 의해서만 감독됩니다.
+</div>
 
 ## B IMPLEMENTATION DETAILS <br>
 
