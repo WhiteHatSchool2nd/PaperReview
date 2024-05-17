@@ -202,6 +202,11 @@ E.1 CALCULATION
 E.2 ABLATION OF CRITERION DEFINITION
 우리는 순수 연관성 차이(pure association discrepancy), 순수 재구성 성능(pure reconstruction performance) 및 연관성 차이와 재구성 성능의 다양한 조합 방법(덧셈 및 곱셈)을 포함하여 이상 기준(anomaly criterion)의 다른 정의 하에서 모델 성능을 탐구합니다.
 
-![수식 + 내용 6](https://github.com/WhiteHatSchool2nd/PaperReview/assets/165824811/9d2a87a3-5e56-49bd-8ad3-d59334ef1f5f)
+![수식 + 내용 6](https://github.com/WhiteHatSchool2nd/PaperReview/assets/165824811/59d1496a-1f28-45a0-81fb-582937f58918)
+
+Table 7에서, 우리가 제안한 연관성 차이(association discrepancy)를 직접 사용하는 것도 좋은 성능(performance)을 달성할 수 있으며, 이는 경쟁 기준선(competitive baseline)인 THOC(Shen et al., 2020)를 지속적으로 능가합니다. 또한, 우리가 방정식(Equation) 6에서 사용한 곱셈(multiplication) 조합이 가장 좋은 성능을 보여주며, 이는 재구성 성능(reconstruction performance)과 연관성 차이(association discrepancy) 사이에 더 나은 협력(collaboration)을 가져올 수 있습니다.
+
+Table 7 : 기준 정의(criterion definition)의 절제(ablation) 연구. 비교를 위해 최신 딥 모델인 THOC(THOC) (Shen et al., 2020)도 포함합니다. AssDis와 Recon은 순수 연관성 차이(pure association discrepancy)와 순수 재구성 성능(pure reconstruction performance)을 각각 나타냅니다. Ours는 곱셈 조합(multiplication combination)을 사용한 우리가 제안한 연관성 기반(association-based) 기준을 의미합니다.
+![Table 7](https://github.com/WhiteHatSchool2nd/PaperReview/assets/165824811/c8913b71-ee64-4af2-808c-15f492fa757f)
 
 
