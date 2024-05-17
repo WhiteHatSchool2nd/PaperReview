@@ -194,3 +194,7 @@ Table 6 : 다양한 사전 연관성(prior-association) 정의 하에서의 모�
 
 ![Table 6](https://github.com/WhiteHatSchool2nd/PaperReview/assets/165824811/937ccb81-876e-4b2b-bbdd-94f70bd4a773)
 
+## E ABLATION OF ASSOCIATION-BASED CRITERION
+E.1 CALCULATION
+![알고리즘 3]()
+
