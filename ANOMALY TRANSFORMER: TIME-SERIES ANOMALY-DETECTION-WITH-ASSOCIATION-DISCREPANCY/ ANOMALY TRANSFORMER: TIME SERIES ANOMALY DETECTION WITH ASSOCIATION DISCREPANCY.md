@@ -209,5 +209,12 @@ Table 7에서, 우리가 제안한 연관성 차이(association discrepancy)를 
 Table 7 : 기준 정의(criterion definition)의 절제(ablation) 연구. 비교를 위해 최신 딥 모델인 THOC(THOC) (Shen et al., 2020)도 포함합니다. AssDis와 Recon은 순수 연관성 차이(pure association discrepancy)와 순수 재구성 성능(pure reconstruction performance)을 각각 나타냅니다. Ours는 곱셈 조합(multiplication combination)을 사용한 우리가 제안한 연관성 기반(association-based) 기준을 의미합니다.
 ![Table 7](https://github.com/WhiteHatSchool2nd/PaperReview/assets/165824811/c8913b71-ee64-4af2-808c-15f492fa757f)
 
-## F CONVERGENCE OF MINIMAX OPTIMIZATION
+## F CONVERGENCE OF MINIMAX OPTIMIZATION <br>
+우리 모델의 총 손실은 재구성 손실(Reconstruction Loss)과 연관성 차이(Association Discrepancy)로 구성되며, 최소최대(Minimax) 전략을 통한 최적화로 연관성 학습의 제어를 강화합니다. 이 최적화 과정은 최소화 단계에서 연관성 차이와 재구성 오류(Reconstruction Error)를 줄이는 경향이 있고, 최대화 단계에서는 연관성 차이를 늘리며 재구성 오류를 줄이는 경향이 있습니다. 실세계 데이터셋에서의 훈련 과정 분석 결과, 모델의 총 손실 부분은 제한된 반복 횟수 내에 수렴하는 우수한 특성을 보였으며, 이는 최적화에 필수적임을 보여줍니다.
+
+![Figure 10](https://github.com/WhiteHatSchool2nd/PaperReview/assets/165824811/407e563d-287c-4aa4-b462-85fd570d66cb)
+훈련 중 실제 데이터셋에서 재구성 손실 ∥X − X ∥의 변화 곡선
+
+![Figure 11](https://github.com/WhiteHatSchool2nd/PaperReview/assets/165824811/9c014f15-d497-4597-8ff8-5c20ddbda0c1)
+훈련 과정 중 실제 데이터셋에서의 연관성 차이 ∥AssDis(P,S;X)∥₁의 변화 곡선.
 
