@@ -235,3 +235,16 @@ Table 9: 다양한 숨겨진 채널(d_model)의 수에 따른 모델 성능. 이
 • 실제 세계 응용 프로그램에서 테스트 부분집합의 크기가 여전히 접근할 수 없기 때문에, 우리는 δ라는 고정된 값으로 임계값을 고정해야 합니다. 이는 검증 세트의 r 시간 지점의 이상 점수가 δ보다 크고 따라서 이상으로 감지될 수 있음을 보장할 수 있습니다.
 
 Table 10 : 검증 세트(validation set)에서 이상 점수(anomaly score) 분포의 통계 결과(statistical results)를 보여줍니다. 여기서, 몇 가지 구간(intervals)에 해당하는 값의 시간 지점(time points) 수를 계산합니다.
+
+![Table 10](https://github.com/WhiteHatSchool2nd/PaperReview/assets/165824811/1db0e02c-0374-4d8c-a8bf-0ec8c0e1679c)
+
+직접 δ(델타) 값을 설정하는 것도 가능합니다. Table 10의 구간(intervals)에 따라, SMD, MSL, SWaT 데이터셋(datasets)에 대해 δ를 0.1로 설정할 수 있고, SMAP 및 PSM 데이터셋에 대해서는 0.01로 설정할 수 있습니다. 이 방식은 r 값을 설정하는 것과 매우 유사한 성능(performance)을 보여줍니다.
+
+Table 11: 모델 성능(Model Performance)
+"δ(델타)로 선택"은 SMD, MSL, SWaT 데이터셋에 대해 δ를 0.1로, SMAP 및 PSM 데이터셋에 대해서는 0.01로 설정합니다.
+"r로 선택"은 SWaT에 대해 0.1%, SMD에 대해 0.5%, 그리고 다른 데이터셋에 대해 1%로 r을 선택합니다.
+![Table 11](https://github.com/WhiteHatSchool2nd/PaperReview/assets/165824811/eb15277f-fa55-4d36-b967-dae68877b350)
+
+실제 응용 프로그램에서, 선택된 이상(anomalies)의 수는 인적 자원(human resources)에 의해 결정됩니다. 이용 가능한 자원에 따라 쉽게 결정할 수 있는 더 실용적인 방법으로, 감지된 이상의 수를 비율 r(ratio)에 의해 설정하는 것이 더 합리적입니다.
+
+## I MORE BASELINES
