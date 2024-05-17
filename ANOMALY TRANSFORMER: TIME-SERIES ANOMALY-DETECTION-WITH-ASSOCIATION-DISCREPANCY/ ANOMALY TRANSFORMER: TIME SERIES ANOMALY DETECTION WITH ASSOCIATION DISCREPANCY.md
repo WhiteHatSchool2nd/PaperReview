@@ -135,5 +135,11 @@ Figure 5 다양한 이상(anomaly) 카테고리 시각화 : NeurIPS-TS 데이터
 
 Table 3 : 이상(Anormal) 및 정상(Normal) 시간 지점들에 대한 인접 연관 가중치의 통계 결과입니다. Recon, Max, Minimax는 각각 재구성 손실(Reconstruction Loss), 직접 최대화(Direct Maximization), 미니맥스 전략(Minimax Strategy)에 의해 관리되는 연관 학습 과정을 나타냅니다. 높은 대조 값(Abnormal)은 정상(Normal) 및 이상(Anormal) 시간 지점들 사이의 더 강한 구별 가능성(Distinguishability)을 나타냅니다.
 
-![Table 3]()
+![Table 3](https://github.com/WhiteHatSchool2nd/PaperReview/assets/165824811/c8dce3de-5b8f-4237-9403-1dfd3e4f0e99)
+
+## 5 CONCLUSION AND FUTURE WORK
+이 논문은 비지도 시계열 이상 탐지(Unsupervised Time Series Anomaly Detection) 문제를 다룹니다. 기존 방법들과 달리, 우리는 트랜스포머(Transformers)를 통해 더 많은 정보를 담은 시간 지점의 연관성을 학습합니다. 연관 차이(Association Discrepancy)의 핵심 관찰을 기반으로, 이상-주의(Anomaly-Attention)를 포함하고 이중 분기 구조(Two-Branch Structure)로 연관 차이를 구현하는 이상 트랜스포머(Anomaly Transformer)를 제안합니다. 정상(Normal)과 이상(Abnormal) 시간 지점 간의 차이를 더욱 확대하기 위해 미니맥스 전략(Minimax Strategy)이 적용됩니다. 연관 차이를 도입함으로써, 재구성 성능(Reconstruction Performance)과 연관 차이가 협력하는 연관 기반 기준(Association-Based Criterion)을 제안합니다. 이상 트랜스포머는 광범위한 경험적 연구 세트에서 최신 기술(State-of-the-Art) 결과를 달성합니다. 향후 연구에는 자동 회귀(Autoregression) 및 상태 공간 모델(State Space Models)에 대한 고전 분석을 바탕으로 한 이상 트랜스포머의 이론적 연구가 포함됩니다.
+
+## A PARAMETER SENSITIVITY
+
 
