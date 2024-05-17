@@ -133,4 +133,7 @@ Figure 5 다양한 이상(anomaly) 카테고리 시각화 : NeurIPS-TS 데이터
 **Optimization strategy analysis** <br>
 재구성 손실(reconstruction loss)만 사용할 경우, 이상(abnormal) 및 정상(normal) 시간 지점들은 인접(adjacent) 시간 지점들에 대한 연관 가중치(association weights)에서 유사한 성능을 보여, 대조 값(contrast value)이 1에 가깝게 나타납니다(표 3). 연관 차이(association discrepancy)를 최대화하는 것은 시리즈 연관(series-association)이 비인접(non-adjacent) 영역에 더 많은 주의를 기울이도록 강제합니다. 그러나, 더 나은 재구성을 얻기 위해서, 이상 현상은 정상 시간 지점들에 비해 훨씬 큰 인접 연관 가중치를 유지해야 하며, 이는 더 큰 대조 값에 해당합니다. 하지만 직접적인 최대화(direct maximization)는 가우시안 커널(Gaussian kernel)의 최적화 문제를 일으키며, 예상대로 정상 및 이상 시간 지점들 사이의 차이를 강하게 확대할 수 없습니다(SMD: 1.15→1.27). 미니맥스(minimax) 전략은 사전 연관(prior-association)을 최적화하여 시리즈 연관에 더 강한 제약을 제공합니다. 따라서, 미니맥스 전략은 직접 최대화보다 더 구별 가능한 대조 값들을 얻어(SMD: 1.27→2.39) 더 나은 성능을 발휘합니다.
 
-Table 3 : 
+Table 3 : 이상(Anormal) 및 정상(Normal) 시간 지점들에 대한 인접 연관 가중치의 통계 결과입니다. Recon, Max, Minimax는 각각 재구성 손실(Reconstruction Loss), 직접 최대화(Direct Maximization), 미니맥스 전략(Minimax Strategy)에 의해 관리되는 연관 학습 과정을 나타냅니다. 높은 대조 값(Abnormal)은 정상(Normal) 및 이상(Anormal) 시간 지점들 사이의 더 강한 구별 가능성(Distinguishability)을 나타냅니다.
+
+![Table 3]()
+
