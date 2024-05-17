@@ -180,6 +180,8 @@ D.2 ABLATION OF STATISTICAL DISTANCE
 교차 엔트로피(Cross-Entropy, CE).
 L2 거리(L2 Distance, L2).
 
-Table 5 : 연관성 차이의 다른 정의(definitions)에 따른 모델 성능(performance).
+Table 5 : 연관성 차이의 다른 정의(definitions)에 따른 모델 성능(performance)
+![Table 5](https://github.com/WhiteHatSchool2nd/PaperReview/assets/165824811/f0facea0-9a95-4627-b5c6-fd3b01ffca6b)
 
+Table 5에서 보듯이, 우리가 제안한 연관성 차이(association discrepancy) 정의는 여전히 최고의 성능(performance)을 달성합니다. CE(Cross-Entropy)와 JSD(Jensen–Shannon Divergence)는 원리적으로 우리의 정의에 가까운 상당히 좋은 결과를 제공할 수 있으며, 정보 이득(information gain)을 나타내는 데 사용될 수 있습니다. L2 거리(L2 Distance)는 이산 분포(discrete distribution)의 특성을 간과하여 차이에 부적합합니다. 바세르슈타인 거리(Wasserstein Distance)도 일부 데이터셋에서 실패합니다. 이유는 사전 연관성(prior-association)과 시리즈 연관성(series-association)이 위치 인덱스(position indexes)에서 정확히 일치하지만, 바세르슈타인 거리는 점대점(point by point)으로 계산되지 않고 분포 오프셋(distribution offset)을 고려하여 최적화(optimization)와 탐지(detection)에 소음(noises)을 가져올 수 있기 때문입니다.](https://github.com/WhiteHatSchool2nd/PaperReview/assets/165824811/f0facea0-9a95-4627-b5c6-fd3b01ffca6b)
 
