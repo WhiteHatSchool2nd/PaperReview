@@ -169,7 +169,8 @@ Figure 9 : 실제 데이터셋(real-world datasets)에서 모델이 학습한 �
 D.1 ABLATION OF MULTI-LEVEL QUANTIFICATION
 최종 결과를 위해 여러 층(layers)에서의 연관성 차이(association discrepancy)를 평균화합니다(방정식 6). 우리는 단일 층(single-layer) 사용 시 모델 성능을 추가로 조사합니다. 표 4에 나타난 바와 같이, 다중 층(multiple-layer) 설계가 가장 좋은 성능을 달성하는데, 이는 다중 레벨(multi-level) 정량화의 효과를 검증합니다
 
-모델 레이어(model layers) 선택 차이에 따른 모델 성능(performance)과 연관성 차이(association discrepancy)
+<div align="center>모델 레이어(model layers) 선택 차이에 따른 모델 성능(performance)과 연관성 차이(association discrepancy)
+</div>
 ![Table 4](https://github.com/WhiteHatSchool2nd/PaperReview/assets/165824811/0c3e5157-9348-413d-a720-2984f1d88f11)
 
 
