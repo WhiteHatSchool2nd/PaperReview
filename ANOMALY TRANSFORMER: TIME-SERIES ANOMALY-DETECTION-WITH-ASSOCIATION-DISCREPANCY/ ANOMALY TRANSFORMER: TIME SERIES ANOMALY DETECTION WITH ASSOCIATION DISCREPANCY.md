@@ -120,6 +120,8 @@ Table 2 : Ablation 연구 결과는 이상 감지 기준(anomaly criterion), 사
 4.2 MODEL ANALYSIS
 모델의 직관적인 이해를 돕기 위해, 이상 감지 기준(anomaly criterion), 학습 가능한 사전 연관성(learnable prior-association), 그리고 최적화 전략(optimization strategy)이라는 세 가지 핵심 설계에 대한 시각화 자료와 통계 결과를 제공합니다.
 
-![Figure 4](https://github.com/WhiteHatSchool2nd/PaperReview/assets/165824811/d2c95f60-d997-4fe8-856e-33d8edcae5f5)
+![Figure 5](https://github.com/WhiteHatSchool2nd/PaperReview/assets/165824811/d2c95f60-d997-4fe8-856e-33d8edcae5f5)
+**Anomaly criterion visualization**
+직관적인 사례를 얻기 위하여, 연관 기준(association-based criterion)의 작동 방식과 Lai 등(2021)의 분류에 따른 다양한 이상 유형에서의 성능을 그림 5에서 시각화를 통해 탐구합니다. 연관 기준은 일반적으로 더 뚜렷하게 구별됩니다. 특히, 연관 기준은 정상 부분에서 일관되게 작은 값을 얻을 수 있으며, 이는 점-문맥(point-contextual) 및 패턴-계절적(pattern-seasonal) 사례에서 두드러집니다. 반면, 재구성 기준(reconstruction criterion)의 지터(jitter) 곡선은 탐지 과정을 혼란스럽게 하여 실패합니다. 이는 연관 기준이 이상을 강조하고 정상 및 비정상 점에 구별되는 값을 제공하여 탐지의 정확성을 높이고 거짓 양성 비율(false-positive rate)을 줄일 수 있음을 입증합니다.
 
 
