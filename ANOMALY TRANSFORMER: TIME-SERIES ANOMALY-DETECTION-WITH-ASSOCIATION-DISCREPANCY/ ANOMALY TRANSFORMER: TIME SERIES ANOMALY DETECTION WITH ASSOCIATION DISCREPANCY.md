@@ -259,5 +259,10 @@ Table 12 : Anomaly Transformer(우리의 모델)는 다섯 개의 실제 데이�
 **Theoretical analysis** Transformer는 잘 정립된 딥 모델(deep model)이며, 그 성능(performance)은 이전 연구에서 다뤄졌습니다. 하지만 복잡한 딥 모델(complex deep models)의 이론은 아직 충분히 탐구되지 않았습니다. 앞으로, 자기회귀(auto-regression)와 상태 공간 모델(state space models)에 대한 고전적 분석을 바탕으로 Anomaly Transformer의 정리(theorem)를 더욱 깊이 탐구할 예정입니다.
 
 ## K DATASET <br>
+DATASET에 세부사항
+
+Table 13 : 벤치마크의 세부 사항입니다. AR은 전체 데이터셋의 실제 비정상 비율을 나타냅니다.
+![Table 13](https://github.com/WhiteHatSchool2nd/PaperReview/assets/165824811/8583db5f-c2ca-493c-8de6-dc39e3101150)
+
 
 ## L UCR DATASET <br>
