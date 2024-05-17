@@ -218,7 +218,7 @@ Table 7 : 기준 정의(criterion definition)의 절제(ablation) 연구. 비교
 ![Figure 11](https://github.com/WhiteHatSchool2nd/PaperReview/assets/165824811/9c014f15-d497-4597-8ff8-5c20ddbda0c1)
 훈련 과정 중 실제 데이터셋에서의 연관성 차이 ∥AssDis(P,S;X)∥₁의 변화 곡선.
 
-## G MODEL PARAMETER SENSITIVITY
+## G MODEL PARAMETER SENSITIVITY <br>
 이 논문에서는 Transformers(Vaswani et al., 2017; Zhou et al., 2021)의 관례를 따라 하이퍼파라미터 L과 d_model을 설정했습니다. 모델 파라미터의 민감도를 평가하기 위해, 다양한 층(L)의 수와 숨겨진 채널(d_model)의 선택에 따른 성능과 효율성을 조사했습니다. 일반적으로 모델 크기를 증가시키면 더 나은 결과를 얻을 수 있지만, 이는 더 큰 메모리와 계산 cost를 수반합니다.
 
 Table 8: 다양한 층(L)의 수에 따른 모델 성능. 
@@ -227,7 +227,7 @@ Table 8: 다양한 층(L)의 수에 따른 모델 성능.
 Table 9: 다양한 숨겨진 채널(d_model)의 수에 따른 모델 성능. 이 표는 숨겨진 채널(d_model)의 수를 변화시켰을 때의 모델 성능을 보여줍니다
 ![Table 9](https://github.com/WhiteHatSchool2nd/PaperReview/assets/165824811/32a222dd-3ea7-4fca-a8d5-c60efa9722bd)
 
-## H PROTOCOL OF THRESHOLD SELECTION
+## H PROTOCOL OF THRESHOLD SELECTION <br>
 우리의 논문은 비지도(unsupervised) 시간 시리즈(time series) 이상 탐지(anomaly detection)에 초점을 맞추고 있습니다. 실험적으로, 각 데이터셋은 훈련(training), 검증(validation), 그리고 테스트(test) 부분집합(subsets)을 포함합니다. 이상치(anomalies)는 오직 테스트 부분집합에서만 라벨이 붙여집니다. 따라서, 우리는 K-Means에서 Gap 통계(statistic) 방법(Tibshirani et al., 2001)을 따라 하이퍼파라미터(hyperparameters)를 선택합니다. 선택 절차(selection procedure)가 여기 있습니다:
 
 • 훈련 단계 후, 우리는 라벨이 없는 검증 부분집합에 모델을 적용하고 모든 시간 지점의 이상 점수(방정식 6)를 얻습니다.
@@ -240,17 +240,24 @@ Table 10 : 검증 세트(validation set)에서 이상 점수(anomaly score) 분�
 
 직접 δ(델타) 값을 설정하는 것도 가능합니다. Table 10의 구간(intervals)에 따라, SMD, MSL, SWaT 데이터셋(datasets)에 대해 δ를 0.1로 설정할 수 있고, SMAP 및 PSM 데이터셋에 대해서는 0.01로 설정할 수 있습니다. 이 방식은 r 값을 설정하는 것과 매우 유사한 성능(performance)을 보여줍니다.
 
-Table 11: 모델 성능(Model Performance)
+Table 11: 모델 성능(Model Performance) 
 "δ(델타)로 선택"은 SMD, MSL, SWaT 데이터셋에 대해 δ를 0.1로, SMAP 및 PSM 데이터셋에 대해서는 0.01로 설정합니다.
 "r로 선택"은 SWaT에 대해 0.1%, SMD에 대해 0.5%, 그리고 다른 데이터셋에 대해 1%로 r을 선택합니다.
 ![Table 11](https://github.com/WhiteHatSchool2nd/PaperReview/assets/165824811/eb15277f-fa55-4d36-b967-dae68877b350)
 
 실제 응용 프로그램에서, 선택된 이상(anomalies)의 수는 인적 자원(human resources)에 의해 결정됩니다. 이용 가능한 자원에 따라 쉽게 결정할 수 있는 더 실용적인 방법으로, 감지된 이상의 수를 비율 r(ratio)에 의해 설정하는 것이 더 합리적입니다.
 
-## I MORE BASELINES
+## I MORE BASELINES <br>
+시계열 이상 감지(time series anomaly detection) 방법뿐만 아니라 변화 지점 감지(change point detection)와 시계열 분할(time series segmentation) 방법도 중요한 기준선(baselines)으로 활용될 수 있습니다. 변화 지점 감지에서는 BOCPD(Adams & MacKay, 2007)와 TS-CP2(Deldari et al., 2021)를, 시계열 분할에서는 U-Time(Perslev et al., 2019)을 비교 대상으로 포함시켰습니다. 그럼에도 불구하고, Anomaly Transformer가 여전히 최고의 성능(best performance)을 달성합니다.
 
-## J LIMITATIONS AND FUTURE WORK
+Table 12 : Anomaly Transformer(우리의 모델)는 다섯 개의 실제 데이터셋에서 추가 정량적 결과를 제공합니다. 정밀도(Precision), 재현율(Recall), 그리고 F1-점수(F1-Score)는 각각 성능을 백분율(%)로 나타내며, F1-점수는 정밀도와 재현율의 조화 평균(Harmonic Mean)입니다. 이 지표들에서 높은 값은 더 나은 성능(Better Performance)을 의미합니다.
+![Table 12](https://github.com/WhiteHatSchool2nd/PaperReview/assets/165824811/8ab871d0-b60d-4b59-83a0-de62b8b02d77)
 
-## K DATASET
+## J LIMITATIONS AND FUTURE WORK <br>
+**window size** 부록 A의 Figure 7에서 보여주듯, 모델은 연관 학습(association learning)을 위한 창 크기(window size)가 너무 작으면 실패할 수 있습니다. 하지만, Transformer는 창 크기에 대해 이차 복잡도(quadratic complexity)를 가집니다. 실제 응용 프로그램에서는 절충(trade-off)이 필요합니다.
 
-## L UCR DATASET
+**Theoretical analysis** Transformer는 잘 정립된 딥 모델(deep model)이며, 그 성능(performance)은 이전 연구에서 다뤄졌습니다. 하지만 복잡한 딥 모델(complex deep models)의 이론은 아직 충분히 탐구되지 않았습니다. 앞으로, 자기회귀(auto-regression)와 상태 공간 모델(state space models)에 대한 고전적 분석을 바탕으로 Anomaly Transformer의 정리(theorem)를 더욱 깊이 탐구할 예정입니다.
+
+## K DATASET <br>
+
+## L UCR DATASET <br>
