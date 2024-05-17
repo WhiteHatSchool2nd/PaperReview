@@ -126,4 +126,23 @@ Table 2 : Ablation 연구 결과는 이상 감지 기준(anomaly criterion), 사
 **Anomaly criterion visualization** <br>
 직관적인 사례를 얻기 위하여, 연관 기준(association-based criterion)의 작동 방식과 Lai 등(2021)의 분류에 따른 다양한 이상 유형에서의 성능을 그림 5에서 시각화를 통해 탐구합니다. 연관 기준은 일반적으로 더 뚜렷하게 구별됩니다. 특히, 연관 기준은 정상 부분에서 일관되게 작은 값을 얻을 수 있으며, 이는 점-문맥(point-contextual) 및 패턴-계절적(pattern-seasonal) 사례에서 두드러집니다. 반면, 재구성 기준(reconstruction criterion)의 지터(jitter) 곡선은 탐지 과정을 혼란스럽게 하여 실패합니다. 이는 연관 기준이 이상을 강조하고 정상 및 비정상 점에 구별되는 값을 제공하여 탐지의 정확성을 높이고 거짓 양성 비율(false-positive rate)을 줄일 수 있음을 입증합니다.
 
+![Figure 6](https://github.com/WhiteHatSchool2nd/PaperReview/assets/165824811/a3c0fe7a-3b82-45ff-a391-af5c5874e853)
+다양한 유형의 이상(anomalies)에 대해 학습된 스케일(scale) 파라미터(σ) (빨간색으로 강조)
 
+4.2 MODEL ANALYSIS
+모델의 직관적인 이해를 돕기 위해, 이상 감지 기준(anomaly criterion), 학습 가능한 사전 연관성(learnable prior-association), 그리고 최적화 전략(optimization strategy)이라는 세 가지 핵심 설계에 대한 시각화 자료와 통계 결과를 제공합니다.
+
+![Figure 5](https://github.com/WhiteHatSchool2nd/PaperReview/assets/165824811/d2c95f60-d997-4fe8-856e-33d8edcae5f5)
+
+
+**Anomaly criterion visualization** <br>
+직관적인 사례를 얻기 위하여, 연관 기준(association-based criterion)의 작동 방식과 Lai 등(2021)의 분류에 따른 다양한 이상 유형에서의 성능을 그림 5에서 시각화를 통해 탐구합니다. 연관 기준은 일반적으로 더 뚜렷하게 구별됩니다. 특히, 연관 기준은 정상 부분에서 일관되게 작은 값을 얻을 수 있으며, 이는 점-문맥(point-contextual) 및 패턴-계절적(pattern-seasonal) 사례에서 두드러집니다. 반면, 재구성 기준(reconstruction criterion)의 지터(jitter) 곡선은 탐지 과정을 혼란스럽게 하여 실패합니다. 이는 연관 기준이 이상을 강조하고 정상 및 비정상 점에 구별되는 값을 제공하여 탐지의 정확성을 높이고 거짓 양성 비율(false-positive rate)을 줄일 수 있음을 입증합니다.
+
+![Figure 6](https://github.com/WhiteHatSchool2nd/PaperReview/assets/165824811/a3c0fe7a-3b82-45ff-a391-af5c5874e853)
+다양한 유형의 이상(anomalies)에 대해 학습된 스케일(scale) 파라미터(σ) (빨간색으로 강조)
+
+**Prior-association visualization** <br>
+미니맥스(minimax) 최적화 동안, 사전 연관(prior-association)은 시리즈 연관(series-association)에 가까워지도록 학습됩니다. 따라서, 학습된 σ는 시계열의 인접 집중도(adjacent-concentrating degree)를 반영합니다. 그림 6에서, σ가 시계열의 다양한 데이터 패턴에 적응하여 변화한다는 것을 발견했습니다. 특히, 이상 현상(anomalies)의 사전 연관은 일반 시간 지점보다 작은 σ를 가지며, 이는 이상 현상의 인접 집중 유도 편향(adjacent-concentration inductive bias)과 일치합니다.
+
+**Optimization strategy analysis** <br>
+재구성 손실(reconstruction loss)만 사용할 경우, 이상(abnormal) 및 정상(normal) 시간 지점들은 인접(adjacent) 시간 지점들에 대한 연관 가중치(association weights)에서 유사한 성능을 보여, 대조 값(contrast value)이 1에 가깝게 나타납니다(표 3). 연관 차이(association discrepancy)를 최대화하는 것은 시리즈 연관(series-association)이 비인접(non-adjacent) 영역에 더 많은 주의를 기울이도록 강제합니다. 그러나, 더 나은 재구성을 얻기 위해서, 이상 현상은 정상 시간 지점들에 비해 훨씬 큰 인접 연관 가중치를 유지해야 하며, 이는 더 큰 대조 값에 해당합니다. 하지만 직접적인 최대화(direct maximization)는 가우시안 커널(Gaussian kernel)의 최적화 문제를 일으키며, 예상대로 정상 및 이상 시간 지점들 사이의 차이를 강하게 확대할 수 없습니다(SMD: 1.15→1.27). 미니맥스(minimax) 전략은 사전 연관(prior-association)을 최적화하여 시리즈 연관에 더 강한 제약을 제공합니다. 따라서, 미니맥스 전략은 직접 최대화보다 더 구별 가능한 대조 값들을 얻어(SMD: 1.27→2.39) 더 나은 성능을 발휘합니다.
