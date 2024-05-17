@@ -228,3 +228,10 @@ Table 9: 다양한 숨겨진 채널(d_model)의 수에 따른 모델 성능. 이
 ![Table 9](https://github.com/WhiteHatSchool2nd/PaperReview/assets/165824811/32a222dd-3ea7-4fca-a8d5-c60efa9722bd)
 
 ## H PROTOCOL OF THRESHOLD SELECTION
+우리의 논문은 비지도(unsupervised) 시간 시리즈(time series) 이상 탐지(anomaly detection)에 초점을 맞추고 있습니다. 실험적으로, 각 데이터셋은 훈련(training), 검증(validation), 그리고 테스트(test) 부분집합(subsets)을 포함합니다. 이상치(anomalies)는 오직 테스트 부분집합에서만 라벨이 붙여집니다. 따라서, 우리는 K-Means에서 Gap 통계(statistic) 방법(Tibshirani et al., 2001)을 따라 하이퍼파라미터(hyperparameters)를 선택합니다. 선택 절차(selection procedure)가 여기 있습니다:
+
+• 훈련 단계 후, 우리는 라벨이 없는 검증 부분집합에 모델을 적용하고 모든 시간 지점의 이상 점수(방정식 6)를 얻습니다.
+• 검증 부분집합에서 이상 점수의 빈도를 계산합니다. 이상 점수 분포가 두 클러스터로 나뉘어진 것이 관찰됩니다. 더 높은 이상 점수를 가진 클러스터가 r 시간 지점을 포함하고 있음을 발견합니다. 그리고 우리 모델에 대해, r은 SWaT, SMD 및 기타 데이터셋에 대해 각각 0.1%, 0.5%, 1%에 근접합니다(Table 10).
+• 실제 세계 응용 프로그램에서 테스트 부분집합의 크기가 여전히 접근할 수 없기 때문에, 우리는 δ라는 고정된 값으로 임계값을 고정해야 합니다. 이는 검증 세트의 r 시간 지점의 이상 점수가 δ보다 크고 따라서 이상으로 감지될 수 있음을 보장할 수 있습니다.
+
+Table 10 : 검증 세트(validation set)에서 이상 점수(anomaly score) 분포의 통계 결과(statistical results)를 보여줍니다. 여기서, 몇 가지 구간(intervals)에 해당하는 값의 시간 지점(time points) 수를 계산합니다.
