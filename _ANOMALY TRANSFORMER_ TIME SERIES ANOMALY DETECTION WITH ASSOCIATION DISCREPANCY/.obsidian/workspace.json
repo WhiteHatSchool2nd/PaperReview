@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "_ANOMALY TRANSFORMER_ TIME SERIES ANOMALY DETECTION WITH ASSOCIATION DISCREPANCY.md",
+                "file": "비지도 학습(Unsupervised Learning).md",
                 "mode": "source",
                 "source": false
               }
@@ -69,8 +69,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "right": {
     "id": "5e1354e51c0611c7",
@@ -86,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "_ANOMALY TRANSFORMER_ TIME SERIES ANOMALY DETECTION WITH ASSOCIATION DISCREPANCY.md",
+                "file": "비지도 학습(Unsupervised Learning).md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -103,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "_ANOMALY TRANSFORMER_ TIME SERIES ANOMALY DETECTION WITH ASSOCIATION DISCREPANCY.md",
+                "file": "비지도 학습(Unsupervised Learning).md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -126,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "_ANOMALY TRANSFORMER_ TIME SERIES ANOMALY DETECTION WITH ASSOCIATION DISCREPANCY.md"
+                "file": "비지도 학습(Unsupervised Learning).md"
               }
             }
           }
@@ -149,18 +148,20 @@
   },
   "active": "f95e44d19faeef76",
   "lastOpenFiles": [
-    "셀프 어텐션(Self-Attention).md",
     "_ANOMALY TRANSFORMER_ TIME SERIES ANOMALY DETECTION WITH ASSOCIATION DISCREPANCY.md",
     "비지도 학습(Unsupervised Learning).md",
     "Reconstruction-based.md",
+    "Pasted image 20240626183726.png",
+    "Prediction-based.md",
+    "트랜스포머(Transformers).md",
+    "인코더.md",
+    "셀프 어텐션(Self-Attention).md",
     "Transformer_to_LLaMA_고려대학교_산업경영공학부_강필성.pdf",
     "디코더.md",
     "Pasted image 20240626163049.png",
-    "Prediction-based.md",
     "Pasted image 20240626150232.png",
     "Pasted image 20240626145741.png",
     "이상치(Anomaly).md",
-    "트랜스포머(Transformers).md",
     "Pasted image 20240626144532.png",
     "Pasted image 20240626144525.png",
     "Pasted image 20240626144516.png",
@@ -168,8 +169,6 @@
     "Pasted image 20240626141937.png",
     "소프트맥스 함수.md",
     "Pasted image 20240626112808.png",
-    "Pasted image 20240626112441.png",
-    "인코더.md",
     "점 단위 표현(Pointwise Representation).md"
   ]
 }

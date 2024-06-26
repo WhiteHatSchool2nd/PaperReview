@@ -24,3 +24,10 @@
 
 ## 재구성([[Reconstruction-based]])
 
+# 예시
+
+![[Pasted image 20240626183726.png]]
+
+- Reconstructure - [[_ANOMALY TRANSFORMER_ TIME SERIES ANOMALY DETECTION WITH ASSOCIATION DISCREPANCY]]
+- Reconstructure - [[SISVAE]]
+- Prediction - [[THOC]]
