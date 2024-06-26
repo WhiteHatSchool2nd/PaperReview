@@ -1,0 +1,174 @@
+{
+  "main": {
+    "id": "6b15f9c939eb4a21",
+    "type": "split",
+    "children": [
+      {
+        "id": "24f715cbe5f5f22a",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "f95e44d19faeef76",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Reconstruction-based.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "37b27193d86b8e95",
+    "type": "split",
+    "children": [
+      {
+        "id": "7134b3ce0494702e",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "7c5a026fed017401",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "c65d6681eb78be32",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "cb4f7a0a8bc00f8c",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "5e1354e51c0611c7",
+    "type": "split",
+    "children": [
+      {
+        "id": "5d90a8767aaa2b18",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "d32eea8911d74df6",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "Reconstruction-based.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "4fe20330ed84bba2",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "Reconstruction-based.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "4a5c982984dffd3b",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true
+              }
+            }
+          },
+          {
+            "id": "75eee3b4172ffe78",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "Reconstruction-based.md"
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false
+    }
+  },
+  "active": "f95e44d19faeef76",
+  "lastOpenFiles": [
+    "비지도 학습(Unsupervised Learning).md",
+    "Reconstruction-based.md",
+    "Prediction-based.md",
+    "Pasted image 20240626150232.png",
+    "Pasted image 20240626145741.png",
+    "_ANOMALY TRANSFORMER_ TIME SERIES ANOMALY DETECTION WITH ASSOCIATION DISCREPANCY.md",
+    "이상치(Anomaly).md",
+    "트랜스포머(Transformers).md",
+    "셀프 어텐션(Self-Attention).md",
+    "Pasted image 20240626144532.png",
+    "Pasted image 20240626144525.png",
+    "Pasted image 20240626144516.png",
+    "Pasted image 20240626144305.png",
+    "Transformer_to_LLaMA_고려대학교_산업경영공학부_강필성.pdf",
+    "Pasted image 20240626141937.png",
+    "소프트맥스 함수.md",
+    "Pasted image 20240626112808.png",
+    "Pasted image 20240626112441.png",
+    "Pasted image 20240626111720.png",
+    "디코더.md",
+    "인코더.md",
+    "점 단위 표현(Pointwise Representation).md"
+  ]
+}
