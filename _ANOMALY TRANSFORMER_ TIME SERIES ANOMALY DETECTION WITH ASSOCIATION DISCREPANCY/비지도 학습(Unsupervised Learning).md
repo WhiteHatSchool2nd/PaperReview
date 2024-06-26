@@ -31,3 +31,10 @@
 - Reconstructure - [[_ANOMALY TRANSFORMER_ TIME SERIES ANOMALY DETECTION WITH ASSOCIATION DISCREPANCY]]
 - Reconstructure - [[SISVAE]]
 - Prediction - [[THOC]]
+
+# 논문에서 제시된 기법들
+
+- [[지역 이상 인자(Local Outlier Factor, LOF)]]
+- [[원 클래스 SVM(One-Class SVM, OC-SVM)]]
+- [[SVDD]]
+

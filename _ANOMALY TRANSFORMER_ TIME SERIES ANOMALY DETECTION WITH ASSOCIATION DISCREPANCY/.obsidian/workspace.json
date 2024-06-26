@@ -13,13 +13,38 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "비지도 학습(Unsupervised Learning).md",
+                "file": "_ANOMALY TRANSFORMER_ TIME SERIES ANOMALY DETECTION WITH ASSOCIATION DISCREPANCY.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "12a8cfba43911514",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "이상치 트랜스포머(Anomaly Transformer).md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "10eea77a022fad09",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "연관성 차이(Association Discrepancy).md",
                 "mode": "source",
                 "source": false
               }
             }
           }
-        ]
+        ],
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -85,7 +110,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "비지도 학습(Unsupervised Learning).md",
+                "file": "연관성 차이(Association Discrepancy).md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +127,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "비지도 학습(Unsupervised Learning).md",
+                "file": "연관성 차이(Association Discrepancy).md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +150,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "비지도 학습(Unsupervised Learning).md"
+                "file": "연관성 차이(Association Discrepancy).md"
               }
             }
           }
@@ -146,10 +171,25 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "f95e44d19faeef76",
+  "active": "10eea77a022fad09",
   "lastOpenFiles": [
     "_ANOMALY TRANSFORMER_ TIME SERIES ANOMALY DETECTION WITH ASSOCIATION DISCREPANCY.md",
+    "이상치 트랜스포머(Anomaly Transformer).md",
+    "연관성 차이(Association Discrepancy).md",
+    "피드-포워드(Feed-Forward) 레이어.md",
+    "시리즈-연관성(Series-Association).md",
+    "사전-연관성(Prior-Association).md",
+    "가우시안 커널.md",
+    "가우시안 분포.md",
+    "Pasted image 20240626201548.png",
+    "Pasted image 20240626201521.png",
+    "이상-주의 메커니즘(Anomaly-Attention Mechanism).md",
+    "자기-주의 맵(Self-Attention Map).md",
     "비지도 학습(Unsupervised Learning).md",
+    "최소-최대(Minimax) 전략.md",
+    "Pasted image 20240626195149.png",
+    "Pasted image 20240626195126.png",
+    "Pasted image 20240626194857.png",
     "Reconstruction-based.md",
     "Pasted image 20240626183726.png",
     "Prediction-based.md",
@@ -163,12 +203,7 @@
     "Pasted image 20240626145741.png",
     "이상치(Anomaly).md",
     "Pasted image 20240626144532.png",
-    "Pasted image 20240626144525.png",
-    "Pasted image 20240626144516.png",
-    "Pasted image 20240626144305.png",
-    "Pasted image 20240626141937.png",
     "소프트맥스 함수.md",
-    "Pasted image 20240626112808.png",
     "점 단위 표현(Pointwise Representation).md"
   ]
 }
