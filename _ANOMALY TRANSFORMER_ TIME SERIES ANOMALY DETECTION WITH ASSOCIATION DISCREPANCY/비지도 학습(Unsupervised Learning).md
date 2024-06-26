@@ -19,9 +19,8 @@
 
 - 예측(Prediction)
 - 재구성(Reconstruction)
-- 유사도()
 
-## [[Prediction-based]]
+## 예측([[Prediction-based]])
 
-## [[Reconstruction-based]]
+## 재구성([[Reconstruction-based]])
 
