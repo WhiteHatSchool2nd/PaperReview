@@ -146,7 +146,7 @@ def get_224(folder, dstdir):
         cv2.imwrite(new_file_path, img)
     print('Finish resizing'.format(folder=folder))
 
-#학습 및 검증 이미지 리사이즈즈
+#학습 및 검증 이미지 리사이즈
 DATA_DIR_224 = './train_224/'
 get_224(folder='./train/', dstdir=DATA_DIR_224)
 
