@@ -1,0 +1,1 @@
+- **LSTM-ED (Long Short-Term Memory Encoder-Decoder)** 는 LSTM 네트워크를 사용하여 시계열 데이터를 모델링합니다. LSTM은 시간에 따른 데이터의 특성을 학습하여, 예측된 패턴과 실제 데이터 사이의 차이를 기반으로 이상을 탐지합니다.
